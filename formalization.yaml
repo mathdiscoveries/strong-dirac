@@ -4,13 +4,21 @@ version: "v0.4"
 project:
   name: "Strong Dirac Counterexamples for All n >= 8 and Infinite Refutation of Grunbaum's 2010 Conjecture"
   description: >-
-    Unconditional Lean 4 + Mathlib formalization in the Euclidean plane R^2 proving
-    that every n >= 8 admits a non-collinear n-point set with every point incident
-    to at most floor(n/2) connecting lines (closing n = 12k + 11 and all 12 classes
-    modulo 12 self-contained in Lean), and constructing three infinite straight-line
-    families with deficit 5/2 (n = 60s + 53, 60s + 69 for all s >= 0, and 60s + 61
-    for all s >= 1) that refute Grunbaum's 2010 conjecture G(n) = 2 * floor(n/4) by
-    at least 2 across four infinite congruence classes modulo 60.
+    Unconditional Lean 4 + Mathlib formalization in the Euclidean plane R^2 proving:
+    (1) every n >= 8 admits a non-collinear n-point set with every point incident to
+    at most floor(n/2) connecting lines (self-contained across all 12 residue classes
+    modulo 12, adapting Felsner's family for several classes and adding an explicit
+    8-deletion construction for n = 12k + 11, k >= 2); (2) three infinite straight-line
+    knight-lattice families with deficit 5/2 below n/2 (n = 60s + 53 and n = 60s + 69
+    for all s >= 0, and n = 60s + 61 for all s >= 1); and (3) a refutation of
+    Grunbaum's 2010 conjecture G(n) = 2 * floor(n/4) by at least 2 across four
+    infinite congruence classes modulo 60. Companion write-ups and logged prior-work
+    searches (arXiv, CORE, Google Scholar as of 2026-11-22, and surveys through
+    2025) are published at mathdiscoveries.org/results/few-lines-through-every-point
+    and mathdiscoveries.org/results/few-lines-five-halves-short; neither the
+    n = 12k + 11 construction nor infinite straight-line families with deficit > 3/2
+    were found in those logged searches, though paywalled pages 323-326 of
+    Akiyama et al. (2011) and print monographs remain unread/unsearched.
   authors:
     - "Tyler Hughes"
   license: "Apache-2.0"
@@ -22,35 +30,112 @@ classification:
   msc2020: ["52C10", "52C30"]
 
 sources:
-  - title: "Strong Dirac counterexamples for every n >= 8 and infinite deficit-5/2 straight-line families"
-    type: other
-    relationship: other
-    note: >-
-      Explicit projective constructions, quadratic-integer lifts, hull
-      certificates, and projective-to-Euclidean embeddings discovered and
-      formalized in Lean 4 by AI research agents built and directed by Tyler
-      Hughes; accompanying unrefereed manuscript at mathdiscoveries.org.
-  - title: "Conjectures on the number of lines determined by n points in the plane"
-    authors:
-      - "Branko Grunbaum"
-    type: paper
-    location: "Geombinatorics 20 (2010), 117-124"
-    relationship: background
-    note: "Poses the conjectured bound G(n) = 2 * floor(n/4) refuted here."
-  - title: "On the strong Dirac conjecture"
+  - title: "Arrangements of n Points whose Incident-Line-Numbers are at most n/2"
     authors:
       - "Jin Akiyama"
       - "Hiro Ito"
       - "Midori Kobayashi"
       - "Gisaku Nakamura"
+    id: "https://doi.org/10.1007/s00373-011-1023-4"
     type: paper
-    location: "Discrete Mathematics 311 (2011), 1605-1610"
-    relationship: formalizes
+    location: "Graphs and Combinatorics 27(3) (2011), 321-326"
+    relationship: independently-proves
     note: >-
-      Covers 11 of 12 residue classes modulo 12 for Dirac's floor(n/2) problem
-      (re-proved self-contained inside dirac_counterexample_all_ge_8), leaving
-      n = 12k + 11 open, which is settled here alongside the original
-      deficit-5/2 families refuting Grunbaum (2010).
+      Reported in secondary surveys (Lund-Purdy-Smith 2014, Trok 2020,
+      Dumitrescu 2022, Florek 2025) to construct counterexamples with at most
+      floor(n/2) connecting lines per point for 11 of 12 residue classes modulo
+      12 (plus n = 35 and n = 47), leaving n = 12k + 11 (k >= 4) open. Pages
+      323-326 of the published article were paywalled and unread; this
+      formalization independently proves all 12 residue classes modulo 12
+      (for every n >= 8) self-contained inside dirac_counterexample_all_ge_8.
+  - title: "Research Problems in Discrete Geometry"
+    authors:
+      - "Peter Brass"
+      - "William O. J. Moser"
+      - "Janos Pach"
+    id: "https://doi.org/10.1007/0-387-29929-7"
+    type: book
+    location: "Springer (2005), p. 313 (Stefan Felsner's infinite family)"
+    relationship: adapts
+    note: >-
+      Presents Stefan Felsner's infinite 6K + 7 point-line construction
+      (deficit 3/2 below n/2 for even K; also discussed in Felsner's 2004
+      monograph and cited in Lund-Purdy-Smith 2014 and Trok 2020; the printed
+      book pages were not directly consulted, and the projective coordinates
+      used here follow the standard dualized description in the open surveys).
+      StrongDirac/TightnessAndMod12.lean formalizes Felsner's even-parameter
+      family felsnerSet (n = 12k + 7 and its 1-deletion 12k + 6) and adapts it
+      via a 4-deletion (felsnerDel4, n = 12k + 3 and 12k + 2), while
+      StrongDirac/Class12kPlus11.lean adapts the same underlying grid via an
+      8-deletion for n = 12k + 11 (k >= 2).
+  - title: "Dirac's conjecture concerning high-incidence elements in aggregates"
+    authors:
+      - "Branko Grunbaum"
+    type: paper
+    location: "Geombinatorics 20(2) (2010), 48-55"
+    relationship: background
+    note: >-
+      Poses the conjectured bound G(n) = 2 * floor(n/4) for all sufficiently
+      large n (refuted here by at least 2 across four infinite congruence
+      classes modulo 60 in refutes_grunbaum_2010) and tabulates small-n
+      configurations including the 25-point octagon arrangement O25 adapted by
+      deleting two points for the n = 23 base case.
+  - title: "A pseudoline counterexample to the strong Dirac conjecture"
+    authors:
+      - "Ben Lund"
+      - "George B. Purdy"
+      - "Justin W. Smith"
+    id: "https://doi.org/10.37236/4015"
+    type: paper
+    location: "Electronic Journal of Combinatorics 21(2) (2014), #P2.31"
+    relationship: background
+    note: >-
+      Constructs pseudoline counterexamples with unbounded deficit while noting
+      that Felsner's family remained the best known straight-line infinite
+      family (deficit 3/2) and citing Akiyama et al. (2011).
+  - title: "On an improved bound for the Dirac-Motzkin conjecture"
+    authors:
+      - "William Trok"
+    id: "https://arxiv.org/abs/2003.02397"
+    type: paper
+    location: "arXiv:2003.02397 (2020)"
+    relationship: background
+    note: >-
+      Recent survey/paper consulted in the prior-work check noting that all
+      known infinite straight-line counterexample families satisfied deficit at
+      most 3/2 and citing the open n = 12k + 11 case of Akiyama et al. (2011).
+  - title: "On the strong Dirac conjecture"
+    authors:
+      - "Adrian Dumitrescu"
+    id: "https://arxiv.org/abs/2204.06101"
+    type: paper
+    location: "arXiv:2204.06101 (2022)"
+    relationship: background
+    note: >-
+      Recent literature consulted in the prior-work check (alongside Florek,
+      arXiv:2501.18406, 2025) confirming Felsner's deficit-3/2 family and the
+      open n = 12k + 11 gap remained the recorded state of knowledge in the
+      open arXiv literature.
+  - title: "Few lines through every point (n = 12k + 11) and deficit-5/2 straight-line families"
+    authors:
+      - "Tyler Hughes"
+    id: "https://mathdiscoveries.org/results/few-lines-five-halves-short"
+    type: other
+    location: >-
+      Companion result pages, dated manuscript PDF, verification archives, and
+      prior-work search logs at
+      https://mathdiscoveries.org/results/few-lines-through-every-point and
+      https://mathdiscoveries.org/results/few-lines-five-halves-short
+    relationship: other
+    note: >-
+      Companion unrefereed write-ups produced by AI research agents built and
+      directed by Tyler Hughes, documenting the 8-deletion n = 12k + 11 family,
+      the knight-lattice deficit-5/2 straight-line families, and dated
+      prior-work searches (arXiv, CORE on 2026-11-20, Google Scholar on
+      2026-11-22, and 2014-2025 surveys listed above). Those searches found no
+      prior publication of either construction, while recording remaining
+      unread sources (paywalled pages 323-326 of Akiyama et al. 2011 and print
+      monographs).
 
 related_formalizations: []
 
@@ -82,9 +167,9 @@ automation:
       prompting_notes: "Goal-directed mathematical discovery and Lean 4 formalization."
   spend_usd: "not tracked"
   notes: >-
-    All constructions, proofs, and Lean 4 formalizations were produced by AI
-    research agents built and directed by Tyler Hughes. No human mathematician
-    has yet refereed the proof.
+    All new constructions, proofs, and Lean 4 formalizations were produced by
+    AI research agents built and directed by Tyler Hughes. No human
+    mathematician has yet refereed the proof.
 
 fidelity:
   divergences: ""
@@ -105,7 +190,7 @@ alignment:
       lean: "StrongDiracChallenge.dirac_counterexample_all_ge_8"
       module: "Challenge"
       status: proved
-      note: "Self-contained across all 12 residue classes modulo 12."
+      note: "Self-contained across all 12 residue classes modulo 12 (adapting Felsner's family and adding an 8-deletion for n = 12k + 11)."
     - source: "Strong Dirac counterexamples for every odd n >= 9"
       lean: "StrongDiracChallenge.dirac_counterexample_all_odd_ge_9"
       module: "Challenge"
