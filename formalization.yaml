@@ -20,10 +20,10 @@ project:
     were found in those logged searches, though paywalled pages 323-326 of
     Akiyama et al. (2011) and print monographs remain unread/unsearched.
   authors:
-    - "Tyler Hughes"
+    - "Tyler B. Hughes"
   license: "Apache-2.0"
   responsible_maintainers:
-    - "Tyler Hughes"
+    - "Tyler B. Hughes"
 
 classification:
   arxiv: ["math.CO", "math.MG"]
@@ -118,7 +118,7 @@ sources:
       open arXiv literature.
   - title: "Few lines through every point (n = 12k + 11) and deficit-5/2 straight-line families"
     authors:
-      - "Tyler Hughes"
+      - "Tyler B. Hughes"
     id: "https://mathdiscoveries.org/results/few-lines-five-halves-short"
     type: other
     location: >-
@@ -129,7 +129,7 @@ sources:
     relationship: other
     note: >-
       Companion unrefereed write-ups produced by AI research agents built and
-      directed by Tyler Hughes, documenting the 8-deletion n = 12k + 11 family,
+      directed by Tyler B. Hughes, documenting the 8-deletion n = 12k + 11 family,
       the knight-lattice deficit-5/2 straight-line families, and dated
       prior-work searches (arXiv, CORE on 2026-11-20, Google Scholar on
       2026-11-22, and 2014-2025 surveys listed above). Those searches found no
@@ -155,7 +155,7 @@ automation:
   methods:
     - method: agent
       models: []
-      framework: "AI research agent pipeline built and directed by Tyler Hughes"
+      framework: "AI research agent pipeline built and directed by Tyler B. Hughes"
       tool_setup: >-
         Autonomous builder, adversarial falsifier, and reviewer agents
         discovered the constructions and formalized the 198 declarations in
@@ -168,7 +168,7 @@ automation:
   spend_usd: "not tracked"
   notes: >-
     All new constructions, proofs, and Lean 4 formalizations were produced by
-    AI research agents built and directed by Tyler Hughes. No human
+    AI research agents built and directed by Tyler B. Hughes. No human
     mathematician has yet refereed the proof.
 
 fidelity:
