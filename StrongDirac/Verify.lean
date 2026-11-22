@@ -1,0 +1,220 @@
+module
+
+public import StrongDirac
+
+/-!
+# Axiom Verification Audit for `StrongDirac`
+
+Prints the Lean 4 kernel axioms used by every public theorem and lemma in
+`StrongDirac`. A clean audit must show ONLY Lean's standard axioms
+(`propext`, `Classical.choice`, `Quot.sound`) — NEVER `sorryAx`,
+`Lean.ofReduceBool`, `Lean.trustCompiler`, or any custom axiom.
+-/
+
+-- Projective plane ℝP², spanned line counts, and Euclidean ℝ² embedding (Projective.lean)
+#print axioms StrongDirac.cross_self
+#print axioms StrongDirac.det_self_left
+#print axioms StrongDirac.det_self_right
+#print axioms StrongDirac.det_self_mid
+#print axioms StrongDirac.det_swap_23
+#print axioms StrongDirac.det_eq_dot_cross
+#print axioms StrongDirac.cross_cross_eq_det
+#print axioms StrongDirac.det_one_left
+#print axioms StrongDirac.samePt_iff_cross_eq_zero
+#print axioms StrongDirac.not_samePt_of_cross_ne_zero
+#print axioms StrongDirac.projLine_eq_iff_det_eq_zero
+#print axioms StrongDirac.projLineCount_le_of_label
+#print axioms StrongDirac.le_projLineCount_of_witness
+#print axioms StrongDirac.projLineCount_eq_of_det_equiv
+#print axioms StrongDirac.det_swapXY
+#print axioms StrongDirac.det_negY
+#print axioms StrongDirac.det_negZ
+#print axioms StrongDirac.swapXY_involutive
+#print axioms StrongDirac.negY_involutive
+#print axioms StrongDirac.negZ_involutive
+#print axioms StrongDirac.collinearR2_self_right
+#print axioms StrongDirac.lineR2_eq_iff_collinearR2
+#print axioms StrongDirac.area_projToR2_mul_denoms
+#print axioms StrongDirac.collinearR2_projToR2_iff
+#print axioms StrongDirac.projToR2_injOn
+#print axioms StrongDirac.quadratic_roots_card_le_two
+#print axioms StrongDirac.exists_good_param
+#print axioms StrongDirac.lineCountR2_projToR2
+#print axioms StrongDirac.exists_euclidean_embedding
+#print axioms StrongDirac.exists_euclidean_set_le
+#print axioms StrongDirac.exists_euclidean_set_eq
+#print axioms StrongDirac.projLineCount_erase_le
+#print axioms StrongDirac.lineCountR2_erase_le
+
+-- 12j+11 family: Closing AIKN (2011) n = 12j + 11 (j ≥ 2), t(X) ≤ (n - 1)/2 (Class12kPlus11.lean)
+#print axioms StrongDirac.Class12kPlus11.mem_Jset_iff
+#print axioms StrongDirac.Class12kPlus11.mem_JZset_iff
+#print axioms StrongDirac.Class12kPlus11.mem_S_K_iff
+#print axioms StrongDirac.Class12kPlus11.card_JZset
+#print axioms StrongDirac.Class12kPlus11.card_Jset
+#print axioms StrongDirac.Class12kPlus11.S_K_card
+#print axioms StrongDirac.Class12kPlus11.S_K_proper
+#print axioms StrongDirac.Class12kPlus11.S_K_nonCollinear
+#print axioms StrongDirac.Class12kPlus11.swapS_mem_S_K
+#print axioms StrongDirac.Class12kPlus11.swapS_invol_on_S_K
+#print axioms StrongDirac.Class12kPlus11.det_swapS_eq_zero
+#print axioms StrongDirac.Class12kPlus11.projLineCount_swapS
+#print axioms StrongDirac.Class12kPlus11.lineCount_W
+#print axioms StrongDirac.Class12kPlus11.lineCount_M1
+#print axioms StrongDirac.Class12kPlus11.lineCount_M2
+#print axioms StrongDirac.Class12kPlus11.lineCount_X
+#print axioms StrongDirac.Class12kPlus11.lineCount_Z
+#print axioms StrongDirac.Class12kPlus11.S_K_lineCount_le
+#print axioms StrongDirac.Class12kPlus11.class12j11_euclidean
+
+-- Verified Interval-Hull Convexity Certificate Engine (HullCert.lean)
+#print axioms StrongDirac.HullCert.le_listMax
+#print axioms StrongDirac.HullCert.listMax_le
+#print axioms StrongDirac.HullCert.mul_listMax_le
+#print axioms StrongDirac.HullCert.listMax_add_mul_le
+#print axioms StrongDirac.HullCert.mul_listMax_convex
+#print axioms StrongDirac.HullCert.ediv_add_mul_of_emod_eq_zero
+#print axioms StrongDirac.HullCert.le_ediv_iff_mul_le
+#print axioms StrongDirac.HullCert.ediv_add_ediv_add_one_nonneg
+#print axioms StrongDirac.HullCert.checkC0Range_append
+#print axioms StrongDirac.HullCert.certifyTarget_of_header_and_range
+#print axioms StrongDirac.HullCert.hullSum_ray_le
+#print axioms StrongDirac.HullCert.hullSum_convex_le
+#print axioms StrongDirac.HullCert.firstStep_le_iff
+#print axioms StrongDirac.HullCert.hullSum_le_of_certifyTarget
+#print axioms StrongDirac.HullCert.projLineCount_le_of_certifyTarget
+
+-- deficit-5/2 families: Knight-Lattice Deficit-5/2 Families & Refutation of Grünbaum (2010) (DeficitFiveHalves.lean)
+#print axioms StrongDirac.DeficitFiveHalves.mem_parityRange_iff
+#print axioms StrongDirac.DeficitFiveHalves.card_parityRange
+#print axioms StrongDirac.DeficitFiveHalves.neg_mem_parityRange
+#print axioms StrongDirac.DeficitFiveHalves.disjoint_parityRange
+#print axioms StrongDirac.DeficitFiveHalves.mem_knightSet_iff
+#print axioms StrongDirac.DeficitFiveHalves.knightSet_card
+#print axioms StrongDirac.DeficitFiveHalves.familyA_card
+#print axioms StrongDirac.DeficitFiveHalves.familyB_card
+#print axioms StrongDirac.DeficitFiveHalves.knightSet_proper
+#print axioms StrongDirac.DeficitFiveHalves.knightSet_nonCollinear
+#print axioms StrongDirac.DeficitFiveHalves.projLineCount_symZ
+#print axioms StrongDirac.DeficitFiveHalves.projLineCount_symY
+#print axioms StrongDirac.DeficitFiveHalves.projLineCount_symXY
+#print axioms StrongDirac.DeficitFiveHalves.knightSet_lineCount_origin
+#print axioms StrongDirac.DeficitFiveHalves.knightSet_covered_by_pencils
+#print axioms StrongDirac.DeficitFiveHalves.cert_b0_Xa
+#print axioms StrongDirac.DeficitFiveHalves.cert_b0_Xe
+#print axioms StrongDirac.DeficitFiveHalves.cert_b0_S
+#print axioms StrongDirac.DeficitFiveHalves.cert_b0_N2
+#print axioms StrongDirac.DeficitFiveHalves.cert_b1_Xa
+#print axioms StrongDirac.DeficitFiveHalves.cert_b1_Xe
+#print axioms StrongDirac.DeficitFiveHalves.cert_b1_S
+#print axioms StrongDirac.DeficitFiveHalves.cert_b1_N2
+#print axioms StrongDirac.DeficitFiveHalves.cert_b2_Xa
+#print axioms StrongDirac.DeficitFiveHalves.cert_b2_Xe
+#print axioms StrongDirac.DeficitFiveHalves.cert_b2_S
+#print axioms StrongDirac.DeficitFiveHalves.cert_b2_N2
+#print axioms StrongDirac.DeficitFiveHalves.cert_b3_Xa
+#print axioms StrongDirac.DeficitFiveHalves.cert_b3_Xe
+#print axioms StrongDirac.DeficitFiveHalves.cert_b3_S
+#print axioms StrongDirac.DeficitFiveHalves.cert_b3_N2
+#print axioms StrongDirac.DeficitFiveHalves.familyA_lineCount_le
+#print axioms StrongDirac.DeficitFiveHalves.familyB_lineCount_le
+#print axioms StrongDirac.DeficitFiveHalves.familyA_top_lineCount
+#print axioms StrongDirac.DeficitFiveHalves.familyB_top_lineCount
+#print axioms StrongDirac.DeficitFiveHalves.deficit52_familyA_euclidean
+#print axioms StrongDirac.DeficitFiveHalves.deficit52_familyB_euclidean
+#print axioms StrongDirac.DeficitFiveHalves.deficit52_refutes_grunbaum
+
+-- Tightness, All-n >= 8 Mod-12 Dirac Counterexamples, and 12-Class Mod-60 Grünbaum Refutation (TightnessAndMod12.lean)
+#print axioms StrongDirac.TightnessAndMod12.proper_subset
+#print axioms StrongDirac.TightnessAndMod12.projLineCount_subset_le
+#print axioms StrongDirac.TightnessAndMod12.projLineCount_sdiff_le_sub
+#print axioms StrongDirac.TightnessAndMod12.exists_euclidean_erase_one
+#print axioms StrongDirac.TightnessAndMod12.qEval_add
+#print axioms StrongDirac.TightnessAndMod12.qEval_sub
+#print axioms StrongDirac.TightnessAndMod12.qEval_mul
+#print axioms StrongDirac.TightnessAndMod12.qEval_det
+#print axioms StrongDirac.TightnessAndMod12.qEval_cross
+#print axioms StrongDirac.TightnessAndMod12.area_projToR2R_mul_denoms
+#print axioms StrongDirac.TightnessAndMod12.collinearR2_projToR2R_iff
+#print axioms StrongDirac.TightnessAndMod12.projToR2R_eq_imp_cross
+#print axioms StrongDirac.TightnessAndMod12.quadratic_roots_card_le_twoR
+#print axioms StrongDirac.TightnessAndMod12.exists_good_paramR
+#print axioms StrongDirac.TightnessAndMod12.qLineReps_subset
+#print axioms StrongDirac.TightnessAndMod12.qLineReps_covers
+#print axioms StrongDirac.TightnessAndMod12.qDet_self_right
+#print axioms StrongDirac.TightnessAndMod12.exists_euclidean_of_checkQSet
+#print axioms StrongDirac.TightnessAndMod12.sqrt2_ker
+#print axioms StrongDirac.TightnessAndMod12.phi_ker
+#print axioms StrongDirac.TightnessAndMod12.phi_sq
+#print axioms StrongDirac.TightnessAndMod12.sqrt2_sq
+#print axioms StrongDirac.TightnessAndMod12.S_K_top_lineCount
+#print axioms StrongDirac.TightnessAndMod12.class12j11_euclidean_tight
+#print axioms StrongDirac.TightnessAndMod12.cert_x11
+#print axioms StrongDirac.TightnessAndMod12.class12j11_j0_euclidean
+#print axioms StrongDirac.TightnessAndMod12.cert_o23
+#print axioms StrongDirac.TightnessAndMod12.class12j11_j1_euclidean
+#print axioms StrongDirac.TightnessAndMod12.class12j11_all_j_euclidean
+#print axioms StrongDirac.TightnessAndMod12.mem_sqGrid_iff
+#print axioms StrongDirac.TightnessAndMod12.sqGrid_card
+#print axioms StrongDirac.TightnessAndMod12.sqGrid_proper
+#print axioms StrongDirac.TightnessAndMod12.sqGrid_nonCollinear_erase_inf
+#print axioms StrongDirac.TightnessAndMod12.sqGrid_lineCount_le
+#print axioms StrongDirac.TightnessAndMod12.sqGrid_mod4_euclidean
+#print axioms StrongDirac.TightnessAndMod12.mem_felsnerSet_iff
+#print axioms StrongDirac.TightnessAndMod12.felsnerSet_card
+#print axioms StrongDirac.TightnessAndMod12.felsnerSet_proper
+#print axioms StrongDirac.TightnessAndMod12.projLineCount_rotF
+#print axioms StrongDirac.TightnessAndMod12.projLineCount_flipZF
+#print axioms StrongDirac.TightnessAndMod12.felsnerSet_lineCount_X
+#print axioms StrongDirac.TightnessAndMod12.felsnerSet_lineCount_M1
+#print axioms StrongDirac.TightnessAndMod12.felsnerSet_lineCount_inf
+#print axioms StrongDirac.TightnessAndMod12.felsnerSet_lineCount_le
+#print axioms StrongDirac.TightnessAndMod12.felsner_mod12_euclidean
+#print axioms StrongDirac.TightnessAndMod12.felsnerDel4_mod12_euclidean
+#print axioms StrongDirac.TightnessAndMod12.class12j11_erase_one_euclidean
+#print axioms StrongDirac.TightnessAndMod12.cert_h3
+#print axioms StrongDirac.TightnessAndMod12.cert_h3_del1
+#print axioms StrongDirac.TightnessAndMod12.cert_n10
+#print axioms StrongDirac.TightnessAndMod12.cert_n22
+#print axioms StrongDirac.TightnessAndMod12.cert_n27
+#print axioms StrongDirac.TightnessAndMod12.cert_n26
+#print axioms StrongDirac.TightnessAndMod12.dirac_counterexample_all_ge_8
+#print axioms StrongDirac.TightnessAndMod12.dirac_counterexample_all_odd_ge_9
+#print axioms StrongDirac.TightnessAndMod12.card_knightD8
+#print axioms StrongDirac.TightnessAndMod12.card_knightD4
+#print axioms StrongDirac.TightnessAndMod12.knightD8_subset_knightSet
+#print axioms StrongDirac.TightnessAndMod12.knightD4_subset_knightD8
+#print axioms StrongDirac.TightnessAndMod12.familyC_card
+#print axioms StrongDirac.TightnessAndMod12.familyBE4_card
+#print axioms StrongDirac.TightnessAndMod12.familyAD8_card
+#print axioms StrongDirac.TightnessAndMod12.familyAD4_card
+#print axioms StrongDirac.TightnessAndMod12.cert_Bodd_Xa_in
+#print axioms StrongDirac.TightnessAndMod12.cert_Bodd_Xe_in
+#print axioms StrongDirac.TightnessAndMod12.cert_Bodd_Xe_top
+#print axioms StrongDirac.TightnessAndMod12.cert_Bodd_S_in
+#print axioms StrongDirac.TightnessAndMod12.cert_Bodd_N2_in
+#print axioms StrongDirac.TightnessAndMod12.cert_Bodd_N2_m4
+#print axioms StrongDirac.TightnessAndMod12.cert_Bev_Xa_in
+#print axioms StrongDirac.TightnessAndMod12.cert_Bev_Xe_in
+#print axioms StrongDirac.TightnessAndMod12.cert_Bev_Xe_top
+#print axioms StrongDirac.TightnessAndMod12.cert_Bev_S_in
+#print axioms StrongDirac.TightnessAndMod12.cert_Bev_N2_in
+#print axioms StrongDirac.TightnessAndMod12.cert_Bev_N2_m4
+#print axioms StrongDirac.TightnessAndMod12.cert_Aev_Xa_in
+#print axioms StrongDirac.TightnessAndMod12.cert_Aev_Xe_in
+#print axioms StrongDirac.TightnessAndMod12.cert_Aev_S_in
+#print axioms StrongDirac.TightnessAndMod12.cert_Aev_N2_in
+#print axioms StrongDirac.TightnessAndMod12.cert_Aodd_Xa_in
+#print axioms StrongDirac.TightnessAndMod12.cert_Aodd_Xe_in
+#print axioms StrongDirac.TightnessAndMod12.cert_Aodd_S_in
+#print axioms StrongDirac.TightnessAndMod12.cert_Aodd_N2_in
+#print axioms StrongDirac.TightnessAndMod12.familyC_lineCount_le
+#print axioms StrongDirac.TightnessAndMod12.familyC_top_lineCount
+#print axioms StrongDirac.TightnessAndMod12.familyBE4_lineCount_le
+#print axioms StrongDirac.TightnessAndMod12.familyAD8_lineCount_le
+#print axioms StrongDirac.TightnessAndMod12.familyAD4_lineCount_le
+#print axioms StrongDirac.TightnessAndMod12.deficit52_familyC_euclidean
+#print axioms StrongDirac.TightnessAndMod12.deficit52_familyBE4_euclidean
+#print axioms StrongDirac.TightnessAndMod12.familyAD8_euclidean
+#print axioms StrongDirac.TightnessAndMod12.familyAD4_euclidean
+#print axioms StrongDirac.TightnessAndMod12.grunbaum_refuted_12_mod60

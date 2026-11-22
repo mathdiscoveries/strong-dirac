@@ -1,0 +1,135 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/mathlib-initiative/formalization.yaml/main/schema/formalization.schema.json
+version: "v0.4"
+
+project:
+  name: "Strong Dirac Counterexamples for All n >= 8 and Infinite Refutation of Grunbaum's 2010 Conjecture"
+  description: >-
+    Unconditional Lean 4 + Mathlib formalization in the Euclidean plane R^2 proving
+    that every n >= 8 admits a non-collinear n-point set with every point incident
+    to at most floor(n/2) connecting lines (closing n = 12k + 11 and all 12 classes
+    modulo 12 self-contained in Lean), and constructing three infinite straight-line
+    families with deficit 5/2 (n = 60s + 53, 60s + 69 for all s >= 0, and 60s + 61
+    for all s >= 1) that refute Grunbaum's 2010 conjecture G(n) = 2 * floor(n/4) by
+    at least 2 across four infinite congruence classes modulo 60.
+  authors:
+    - "Tyler Hughes"
+  license: "Apache-2.0"
+  responsible_maintainers:
+    - "Tyler Hughes"
+
+classification:
+  arxiv: ["math.CO", "math.MG"]
+  msc2020: ["52C10", "52C30"]
+
+sources:
+  - title: "Strong Dirac counterexamples for every n >= 8 and infinite deficit-5/2 straight-line families"
+    type: other
+    relationship: other
+    note: >-
+      Explicit projective constructions, quadratic-integer lifts, hull
+      certificates, and projective-to-Euclidean embeddings discovered and
+      formalized in Lean 4 by AI research agents built and directed by Tyler
+      Hughes; accompanying unrefereed manuscript at mathdiscoveries.org.
+  - title: "Conjectures on the number of lines determined by n points in the plane"
+    authors:
+      - "Branko Grunbaum"
+    type: paper
+    location: "Geombinatorics 20 (2010), 117-124"
+    relationship: background
+    note: "Poses the conjectured bound G(n) = 2 * floor(n/4) refuted here."
+  - title: "On the strong Dirac conjecture"
+    authors:
+      - "Jin Akiyama"
+      - "Hiro Ito"
+      - "Midori Kobayashi"
+      - "Gisaku Nakamura"
+    type: paper
+    location: "Discrete Mathematics 311 (2011), 1605-1610"
+    relationship: formalizes
+    note: >-
+      Covers 11 of 12 residue classes modulo 12 for Dirac's floor(n/2) problem
+      (re-proved self-contained inside dirac_counterexample_all_ge_8), leaving
+      n = 12k + 11 open, which is settled here alongside the original
+      deficit-5/2 families refuting Grunbaum (2010).
+
+related_formalizations: []
+
+status:
+  scope: >-
+    Unconditionally proved in Lean 4 + Mathlib over R x R with standard axioms
+    only (zero sorry, zero native_decide): dirac_counterexample_all_ge_8 (all
+    n >= 8), dirac_counterexample_all_odd_ge_9 (all odd n >= 9), exact
+    deficit-5/2 straight-line families for n = 60s + 53 (s >= 0), 60s + 69
+    (s >= 0), and 60s + 61 (s >= 1), and refutes_grunbaum_2010 across four
+    infinite classes modulo 60.
+  sorry_count: 0
+  sorry_in_definitions: 0
+  axioms: ["propext", "Quot.sound", "Classical.choice"]
+
+automation:
+  methods:
+    - method: agent
+      models: []
+      framework: "AI research agent pipeline built and directed by Tyler Hughes"
+      tool_setup: >-
+        Autonomous builder, adversarial falsifier, and reviewer agents
+        discovered the constructions and formalized the 198 declarations in
+        Lean 4 + Mathlib.
+      cost:
+        wall_time: "not tracked"
+        spend_usd: "not tracked"
+        hardware: "local machine"
+      prompting_notes: "Goal-directed mathematical discovery and Lean 4 formalization."
+  spend_usd: "not tracked"
+  notes: >-
+    All constructions, proofs, and Lean 4 formalizations were produced by AI
+    research agents built and directed by Tyler Hughes. No human mathematician
+    has yet refereed the proof.
+
+fidelity:
+  divergences: ""
+
+review:
+  status: agent-reviewed
+  reviewers:
+    - "Internal adversarial falsifier and reviewer agents"
+  notes: >-
+    Checked by separate internal falsifier and reviewer agents and audited for
+    standard axioms only via StrongDirac/Verify.lean. Not yet refereed by a
+    human mathematician.
+
+alignment:
+  namespace: "StrongDiracChallenge"
+  statements:
+    - source: "Strong Dirac counterexamples for every n >= 8"
+      lean: "StrongDiracChallenge.dirac_counterexample_all_ge_8"
+      module: "Challenge"
+      status: proved
+      note: "Self-contained across all 12 residue classes modulo 12."
+    - source: "Strong Dirac counterexamples for every odd n >= 9"
+      lean: "StrongDiracChallenge.dirac_counterexample_all_odd_ge_9"
+      module: "Challenge"
+      status: proved
+      note: "At most (n - 1) / 2 connecting lines through every point."
+    - source: "Infinite deficit-5/2 family n = 60s + 53 (s >= 0)"
+      lean: "StrongDiracChallenge.familyA_deficit_five_halves"
+      module: "Challenge"
+      status: proved
+      note: "Upper bound and exact attainment 30s + 24."
+    - source: "Infinite deficit-5/2 family n = 60s + 69 (s >= 0)"
+      lean: "StrongDiracChallenge.familyB_deficit_five_halves"
+      module: "Challenge"
+      status: proved
+      note: "Upper bound and exact attainment 30s + 32."
+    - source: "Infinite deficit-5/2 family n = 60s + 61 (s >= 1)"
+      lean: "StrongDiracChallenge.familyC_deficit_five_halves"
+      module: "Challenge"
+      status: proved
+      note: "Upper bound and exact attainment 30s + 28."
+    - source: "Infinite refutation of Grunbaum's 2010 conjecture"
+      lean: "StrongDiracChallenge.refutes_grunbaum_2010"
+      module: "Challenge"
+      status: proved
+      note: "Beats G(n) = 2 * floor(n/4) by at least 2 across four classes mod 60."
+
+acknowledgements: "Built on Lean 4 and Mathlib."
