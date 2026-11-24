@@ -1,5 +1,7 @@
 # Strong Dirac Counterexamples (`n ≥ 8`) and Infinite Refutation of Grünbaum (2010)
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.24490769.svg)](https://doi.org/10.5281/zenodo.24490769)
+
 Unconditional Lean 4 (`v4.35.0`) + Mathlib formalization in the Euclidean plane
 $\mathbb{R}^2$ proving:
 
