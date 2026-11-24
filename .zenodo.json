@@ -1,0 +1,58 @@
+{
+  "creators": [
+    {
+      "name": "Hughes, Tyler B.",
+      "orcid": "0000-0001-6221-9014"
+    }
+  ],
+  "title": "Strong Dirac Counterexamples for All n >= 8 and Infinite Refutation of Grunbaum's 2010 Conjecture",
+  "description": "Unconditional Lean 4 + Mathlib formalization in the Euclidean plane R^2 proving: (1) every n >= 8 admits a non-collinear n-point set with every point incident to at most floor(n/2) connecting lines (self-contained across all 12 residue classes modulo 12, adapting Felsner's family for several classes and adding an explicit 8-deletion construction for n = 12k + 11, k >= 2); (2) three infinite straight-line knight-lattice families with deficit 5/2 below n/2 (n = 60s + 53 and n = 60s + 69 for all s >= 0, and n = 60s + 61 for all s >= 1); and (3) a refutation of Grunbaum's 2010 conjecture G(n) = 2 * floor(n/4) by at least 2 across four infinite congruence classes modulo 60. Companion write-ups and logged prior-work searches (arXiv, CORE, Google Scholar as of 2026-11-22, and surveys through 2025) are published at mathdiscoveries.org/results/few-lines-through-every-point and mathdiscoveries.org/results/few-lines-five-halves-short; neither the n = 12k + 11 construction nor infinite straight-line families with deficit > 3/2 were found in those logged searches, though paywalled pages 323-326 of Akiyama et al. (2011) and print monographs remain unread/unsearched. Generated and checked by AI research agents built and directed by Tyler B. Hughes. No human mathematician has yet refereed the proof.",
+  "upload_type": "software",
+  "access_right": "open",
+  "license": "apache-2.0",
+  "language": "eng",
+  "keywords": [
+    "Lean 4",
+    "formalized mathematics",
+    "theorem proving",
+    "combinatorics",
+    "math.CO",
+    "metric geometry",
+    "math.MG",
+    "MSC 2020: 52C10",
+    "MSC 2020: 52C30"
+  ],
+  "related_identifiers": [
+    {
+      "identifier": "https://mathdiscoveries.org/results/few-lines-through-every-point",
+      "relation": "isSupplementTo",
+      "resource_type": "other"
+    },
+    {
+      "identifier": "https://doi.org/10.1007/s00373-011-1023-4",
+      "relation": "references",
+      "resource_type": "publication-article"
+    },
+    {
+      "identifier": "https://doi.org/10.1007/0-387-29929-7",
+      "relation": "references",
+      "resource_type": "publication-article"
+    },
+    {
+      "identifier": "https://doi.org/10.37236/4015",
+      "relation": "references",
+      "resource_type": "publication-article"
+    },
+    {
+      "identifier": "https://arxiv.org/abs/2003.02397",
+      "relation": "references",
+      "resource_type": "publication-preprint"
+    },
+    {
+      "identifier": "https://arxiv.org/abs/2204.06101",
+      "relation": "references",
+      "resource_type": "publication-preprint"
+    }
+  ],
+  "notes": "Unrefereed. Generated and checked by AI research agents built and directed by Tyler B. Hughes."
+}
