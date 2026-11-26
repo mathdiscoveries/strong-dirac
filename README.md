@@ -8,8 +8,9 @@ $\mathbb{R}^2$ proving:
 1. Every $n \ge 8$ admits a non-collinear $n$-point set with every point on at
    most $\lfloor n/2 \rfloor$ connecting lines (self-contained across all 12
    residue classes modulo 12, adapting Stefan Felsner's infinite $6K + 7$ family
-   — as presented in Brass, Moser, and Pach, *Research Problems in Discrete
-   Geometry*, Springer 2005, p. 313 — and adding an explicit 8-deletion
+   (as discussed by Grünbaum 2010 and reported in Brass, Moser, and Pach,
+   *Research Problems in Discrete Geometry*, Springer 2005, p. 313) and adding an
+   explicit 8-deletion
    construction for $n = 12k + 11$, $k \ge 2$).
 2. Three infinite straight-line knight-lattice families with deficit $5/2$ below
    $n/2$: $n = 60s + 53$ and $n = 60s + 69$ ($s \ge 0$), and $n = 60s + 61$
@@ -26,9 +27,9 @@ $\mathbb{R}^2$ proving:
   residue classes modulo 12 (leaving $n = 12k + 11$, $k \ge 4$, open according
   to subsequent open surveys); pages 323–326 were paywalled and unread, and this
   formalization proves all 12 classes self-contained.
-- **Companion write-ups & search logs:**
+- **Companion paper & search logs** (the paper states and proves every
+  compared statement; this package formalizes them):
   - https://mathdiscoveries.org/results/few-lines-through-every-point
-  - https://mathdiscoveries.org/results/few-lines-five-halves-short
   Logged literature searches (arXiv, CORE 2026-11-20, Google Scholar 2026-11-22,
   and open surveys by Lund–Purdy–Smith 2014, Trok 2020, Dumitrescu 2022, and
   Florek 2025) did not find prior constructions for $n = 12k + 11$ or infinite

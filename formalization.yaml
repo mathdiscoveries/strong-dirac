@@ -14,8 +14,8 @@ project:
     Grunbaum's 2010 conjecture G(n) = 2 * floor(n/4) by at least 2 across four
     infinite congruence classes modulo 60. Companion write-ups and logged prior-work
     searches (arXiv, CORE, Google Scholar as of 2026-11-22, and surveys through
-    2025) are published at mathdiscoveries.org/results/few-lines-through-every-point
-    and mathdiscoveries.org/results/few-lines-five-halves-short; neither the
+    2025) are published at mathdiscoveries.org/results/few-lines-through-every-point;
+    neither the
     n = 12k + 11 construction nor infinite straight-line families with deficit > 3/2
     were found in those logged searches, though paywalled pages 323-326 of
     Akiyama et al. (2011) and print monographs remain unread/unsearched.
@@ -41,11 +41,13 @@ sources:
     location: "Graphs and Combinatorics 27(3) (2011), 321-326"
     relationship: independently-proves
     note: >-
-      Reported in secondary surveys (Lund-Purdy-Smith 2014, Trok 2020,
-      Dumitrescu 2022, Florek 2025) to construct counterexamples with at most
-      floor(n/2) connecting lines per point for 11 of 12 residue classes modulo
-      12 (plus n = 35 and n = 47), leaving n = 12k + 11 (k >= 4) open. Pages
-      323-326 of the published article were paywalled and unread; this
+      Constructs counterexamples with at most floor(n/2) connecting lines per
+      point for 11 of 12 residue classes modulo 12 (plus n = 35 and n = 47),
+      leaving n = 12k + 11 (k >= 4) open, as its abstract and the secondary
+      surveys (Lund-Purdy-Smith 2014, Trok 2020, Dumitrescu 2022, Florek 2025)
+      record; the authors' two-page conference paper (Proc. JCCGG 2009) was
+      read in full. Pages 323-326 of the journal article were paywalled and
+      are unread [to check]; this
       formalization independently proves all 12 residue classes modulo 12
       (for every n >= 8) self-contained inside dirac_counterexample_all_ge_8.
   - title: "Research Problems in Discrete Geometry"
@@ -56,25 +58,28 @@ sources:
     id: "https://doi.org/10.1007/0-387-29929-7"
     type: book
     location: "Springer (2005), p. 313 (Stefan Felsner's infinite family)"
-    relationship: adapts
+    relationship: background
     note: >-
-      Presents Stefan Felsner's infinite 6K + 7 point-line construction
-      (deficit 3/2 below n/2 for even K; also discussed in Felsner's 2004
-      monograph and cited in Lund-Purdy-Smith 2014 and Trok 2020; the printed
-      book pages were not directly consulted, and the projective coordinates
-      used here follow the standard dualized description in the open surveys).
-      StrongDirac/TightnessAndMod12.lean formalizes Felsner's even-parameter
-      family felsnerSet (n = 12k + 7 and its 1-deletion 12k + 6) and adapts it
-      via a 4-deletion (felsnerDel4, n = 12k + 3 and 12k + 2), while
-      StrongDirac/Class12kPlus11.lean adapts the same underlying grid via an
-      8-deletion for n = 12k + 11 (k >= 2).
+      Reported in the surveys to present Stefan Felsner's infinite 6K + 7
+      point-line construction (deficit 3/2 below n/2 for even K; also
+      discussed in Felsner's 2004 monograph and cited in Lund-Purdy-Smith 2014
+      and Trok 2020). The printed book pages were not consulted [to check], so
+      the adaptation of Felsner's family is recorded on the Grunbaum (2010)
+      entry, which was read; the projective coordinates used here follow the
+      standard dualized description in the open surveys.
   - title: "Dirac's conjecture concerning high-incidence elements in aggregates"
     authors:
       - "Branko Grunbaum"
     type: paper
     location: "Geombinatorics 20(2) (2010), 48-55"
-    relationship: background
+    relationship: adapts
     note: >-
+      Full eight-page author manuscript read. Discusses Felsner's
+      even-parameter family (n = 12k + 7, t <= 6k + 2, deficit 3/2), which
+      StrongDirac/TightnessAndMod12.lean formalizes as felsnerSet (n = 12k + 7
+      and its 1-deletion 12k + 6) and adapts via a 4-deletion (felsnerDel4,
+      n = 12k + 3 and 12k + 2), while StrongDirac/Class12kPlus11.lean adapts
+      the same underlying grid via an 8-deletion for n = 12k + 11 (k >= 2).
       Poses the conjectured bound G(n) = 2 * floor(n/4) for all sufficiently
       large n (refuted here by at least 2 across four infinite congruence
       classes modulo 60 in refutes_grunbaum_2010) and tabulates small-n
@@ -116,26 +121,30 @@ sources:
       arXiv:2501.18406, 2025) confirming Felsner's deficit-3/2 family and the
       open n = 12k + 11 gap remained the recorded state of knowledge in the
       open arXiv literature.
-  - title: "Few lines through every point (n = 12k + 11) and deficit-5/2 straight-line families"
+  - title: "Real Point Sets with Few Lines Through Every Point: All n >= 8 and Twelve Modulo-60 Families"
     authors:
       - "Tyler B. Hughes"
-    id: "https://mathdiscoveries.org/results/few-lines-five-halves-short"
-    type: other
-    location: >-
-      Companion result pages, dated manuscript PDF, verification archives, and
-      prior-work search logs at
-      https://mathdiscoveries.org/results/few-lines-through-every-point and
-      https://mathdiscoveries.org/results/few-lines-five-halves-short
-    relationship: other
+    id: "https://mathdiscoveries.org/results/few-lines-through-every-point"
+    type: paper
+    location: "https://mathdiscoveries.org/results/few-lines-through-every-point"
+    relationship: formalizes
+    author_endorsement: participated
     note: >-
-      Companion unrefereed write-ups produced by AI research agents built and
-      directed by Tyler B. Hughes, documenting the 8-deletion n = 12k + 11 family,
-      the knight-lattice deficit-5/2 straight-line families, and dated
-      prior-work searches (arXiv, CORE on 2026-11-20, Google Scholar on
-      2026-11-22, and 2014-2025 surveys listed above). Those searches found no
-      prior publication of either construction, while recording remaining
-      unread sources (paywalled pages 323-326 of Akiyama et al. 2011 and print
-      monographs).
+      The companion paper. It states and proves in writing every compared
+      statement of this package (Theorem 1, Theorem 2(1), Proposition 3 and
+      Table 1 rows A, B and C), and the Lean work formalizes them; the
+      formalization presents no result that the paper does not. The 11
+      residue classes of Akiyama, Ito, Kobayashi and Nakamura are printed
+      prior work, listed above; the proof of them here is a second proof.
+      Felsner's family, as discussed by Grunbaum (2010), is adapted (entry
+      above). Logged prior-work searches (arXiv, CORE on 2026-11-20, Google
+      Scholar on 2026-11-22, and the 2014-2025 surveys listed above) found
+      neither the punctured grid for n = 12k + 11 nor an infinite
+      straight-line family with deficit exceeding 3/2; no exhaustive priority
+      claim is made, and print monographs and the paywalled pages 323-326 of
+      Akiyama et al. (2011) remain unread [to check]. AI research agents built
+      and directed by Tyler B. Hughes generated and checked this work. No human
+      mathematician has yet refereed the proof.
 
 related_formalizations: []
 
@@ -167,8 +176,9 @@ automation:
       prompting_notes: "Goal-directed mathematical discovery and Lean 4 formalization."
   spend_usd: "not tracked"
   notes: >-
-    All new constructions, proofs, and Lean 4 formalizations were produced by
-    AI research agents built and directed by Tyler B. Hughes. No human
+    The constructions and proofs of the companion paper and this Lean 4
+    formalization were produced by AI research agents built and directed by
+    Tyler B. Hughes. No human
     mathematician has yet refereed the proof.
 
 fidelity:
