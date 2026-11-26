@@ -93,12 +93,12 @@ sources:
       Constructs pseudoline counterexamples with unbounded deficit while noting
       that Felsner's family remained the best known straight-line infinite
       family (deficit 3/2) and citing Akiyama et al. (2011).
-  - title: "On an improved bound for the Dirac-Motzkin conjecture"
+  - title: "Projective Duality, Unexpected Hypersurfaces and Logarithmic Derivations of Hyperplane Arrangements"
     authors:
-      - "William Trok"
+      - "Bill Trok"
     id: "https://arxiv.org/abs/2003.02397"
     type: paper
-    location: "arXiv:2003.02397 (2020)"
+    location: "arXiv:2003.02397 (2020), Section 9 (pp. 39-41)"
     relationship: background
     note: >-
       Recent survey/paper consulted in the prior-work check noting that all
