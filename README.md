@@ -36,6 +36,10 @@ $\mathbb{R}^2$ proving:
   straight-line families with deficit $> 3/2$; paywalled pages of Akiyama et al.
   (2011) and print monographs remain unread/unsearched.
 
+Coverage by this package's Palomar comparison: none of the companion paper's 7 main results is compared in Lean in full, and 3 are compared in part, all over the reals: Theorem 1 (the bound $\lfloor n/2 \rfloor$ for every $n \ge 8$ and its odd case, not the exact maximum $6j + 5$ of the rational grid $S_K$); Theorem 2 (5 of its 12 classes modulo 60: the odd classes 53, 9 and 1 with exact maximum $(n - 5)/2$, and the even classes 52 and 8 with an upper bound only); Proposition 3 (family A, without its rationality claim). Lemmas 4, 5 and 6 are proved in this package's Lean library but not compared (Lemmas 4 and 5 over the reals only); Lemma 7 is not in this package; Conjecture 8 is open and not counted.
+
+AI research agents built and directed by Tyler B. Hughes generated and checked this work. No human mathematician has yet refereed the proof.
+
 ## Build & Verify
 
 ```bash
