@@ -52,6 +52,26 @@
       "identifier": "https://arxiv.org/abs/2204.06101",
       "relation": "references",
       "resource_type": "publication-preprint"
+    },
+    {
+      "identifier": "https://doi.org/10.1007/978-3-322-80303-0",
+      "relation": "references",
+      "resource_type": "publication-book"
+    },
+    {
+      "identifier": "https://doi.org/10.26493/1855-3974.88.e12",
+      "relation": "references",
+      "resource_type": "publication-article"
+    },
+    {
+      "identifier": "https://doi.org/10.1090/cbms/010",
+      "relation": "references",
+      "resource_type": "publication-book"
+    },
+    {
+      "identifier": "https://doi.org/10.1093/qmath/2.1.221",
+      "relation": "references",
+      "resource_type": "publication-article"
     }
   ],
   "notes": "Unrefereed. Generated and checked by AI research agents built and directed by Tyler B. Hughes."

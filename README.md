@@ -8,7 +8,8 @@ $\mathbb{R}^2$ proving:
 1. Every $n \ge 8$ admits a non-collinear $n$-point set with every point on at
    most $\lfloor n/2 \rfloor$ connecting lines (self-contained across all 12
    residue classes modulo 12, adapting Stefan Felsner's infinite $6K + 7$ family
-   (as discussed by Grünbaum 2010 and reported in Brass, Moser, and Pach,
+   (Felsner, *Geometric Graphs and Arrangements*, Vieweg 2004, p. 86, as
+   discussed by Grünbaum 2010 and reported in Brass, Moser, and Pach,
    *Research Problems in Discrete Geometry*, Springer 2005, p. 313) and adding an
    explicit 8-deletion
    construction for $n = 12k + 11$, $k \ge 2$).
@@ -27,6 +28,21 @@ $\mathbb{R}^2$ proving:
   residue classes modulo 12 (leaving $n = 12k + 11$, $k \ge 4$, open according
   to subsequent open surveys); pages 323–326 were paywalled and unread, and this
   formalization proves all 12 classes self-contained.
+- **Felsner (2004)**, *Geometric Graphs and Arrangements*, p. 86: the source of
+  the infinite $6K + 7$ family adapted here (`felsnerSet` and its 1-, 4- and
+  8-deletions, the deletions being this package's). Page 86 was not read; the
+  attribution follows Grünbaum (2010) and Lund–Purdy–Smith (2014), both read.
+- **Grünbaum (2009)**, *A catalogue of simplicial arrangements in the real
+  projective plane*, *Ars Math. Contemp.* 2, 1–25: `h3Pts` is the dual of
+  $A(15,1)$ (used at $n = 15$, and with one point deleted at $n = 14$) and
+  `o23Pts` is $A(25,5)$ with two points deleted ($n = 23$); both match the
+  catalogue's $f$-, $t$- and $r$-vectors.
+- **Grünbaum (1972)**, *Arrangements and Spreads*, p. 25, and **Dirac (1951)**,
+  *Collinearity properties of sets of points*, *Quart. J. Math.* 2, 221–227:
+  earlier small counterexamples ($n = 9, 15, 19, 25, 31, 37$) and Dirac's
+  even-$n$ configurations with $t = n/2$, which the all-$n$ theorem meets again
+  at those sizes by its own constructions. Neither was read; both are recorded
+  as background in `formalization.yaml`.
 - **Companion paper & search logs** (the paper states and proves every
   compared statement; this package formalizes them):
   - https://mathdiscoveries.org/results/few-lines-through-every-point
