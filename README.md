@@ -27,7 +27,8 @@ $\mathbb{R}^2$ proving:
   27(3) (2011), 321–326 (`doi:10.1007/s00373-011-1023-4`), covered 11 of 12
   residue classes modulo 12 (leaving $n = 12k + 11$, $k \ge 4$, open according
   to subsequent open surveys); pages 323–326 were paywalled and unread, and this
-  formalization proves all 12 classes self-contained.
+  formalization proves all 12 classes self-contained, independently of the
+  cases they cover.
 - **Felsner (2004)**, *Geometric Graphs and Arrangements*, p. 86: the source of
   the infinite $6K + 7$ family adapted here (`felsnerSet` and its 1-, 4- and
   8-deletions). The package gives explicit coordinates and Lean proofs for its
@@ -43,8 +44,10 @@ $\mathbb{R}^2$ proving:
   *Collinearity properties of sets of points*, *Quart. J. Math.* 2, 221–227:
   earlier small counterexamples ($n = 9, 15, 19, 25, 31, 37$) and Dirac's
   even-$n$ configurations with $t = n/2$, which the all-$n$ theorem meets again
-  at those sizes by its own constructions. Neither was read; both are recorded
-  as background in `formalization.yaml`.
+  at those sizes by its own constructions. Neither was read; both are credited
+  as `independently-proves` in `formalization.yaml`, marked `[to check]`, on
+  the strength of the passages quoted there from Akiyama et al. (2009) and
+  Grünbaum (2010).
 - **Companion paper & search logs** (the paper states and proves every
   compared statement; this package formalizes them):
   - https://mathdiscoveries.org/results/few-lines-through-every-point

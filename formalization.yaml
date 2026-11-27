@@ -70,17 +70,23 @@ sources:
     id: "https://doi.org/10.1007/s00373-011-1023-4"
     type: paper
     location: "Graphs and Combinatorics 27(3) (2011), 321-326"
-    relationship: background
+    relationship: independently-proves
     note: >-
-      The journal version. Per its abstract and the secondary surveys
-      (Lund-Purdy-Smith 2014, Trok 2020, Dumitrescu 2024, Florek 2025), it
-      settles every n >= 8 except the progression n = 12k + 11 (k >= 4),
-      including n = 23, 35 and 47. The Springer abstract and the pp. 321-322
-      preview were read; pp. 323-326 are paywalled and unread [to check]
-      (on 2026-11-27 link.springer.com refused this agent by robots.txt and
-      OpenAlex listed no open copy), so
-      the entry stays background until they are read, although
-      dirac_counterexample_all_ge_8 proves these sizes again, self-contained.
+      The journal version [to check]. Its pages 323-326 were not read: on
+      2026-11-27 link.springer.com refused this agent by robots.txt and
+      OpenAlex listed no open copy. The credit rests on secondary passages
+      that were read. Lund-Purdy-Smith (2014, Section 2, p. 2): "In [1],
+      Akiyama et al. show that the floor(n/2) bound (i.e., the Strong Dirac
+      conjecture with c = 0) can be attained for all sufficiently large n
+      except those of the form 12k + 11 (which they left as an open
+      problem)". Grunbaum (2010, p. 8, table) lists examples X(11), X(39),
+      X(49) and X(51) from this paper, and X(49) with two lines deleted at
+      n = 47 (t = 22). That the open progression starts at k = 4, so that
+      the paper also covers n = 23 and 35, rests on an earlier entry in this
+      file recording that the Springer abstract and the pp. 321-322 preview
+      were read, and on the editorial audit seats' report; it was not
+      re-read here. dirac_counterexample_all_ge_8 proves the half bound at
+      all these sizes again, by its own constructions.
   - title: "Geometric Graphs and Arrangements: Some Chapters from Combinatorial Geometry"
     authors:
       - "Stefan Felsner"
@@ -101,12 +107,16 @@ sources:
       8-deletions are not listed in the sources read. The package gives
       explicit coordinates and Lean proofs for all of them. Page 86
       itself was not read [to check]: the book is in print and no open copy
-      was found. The attribution and parameters come from two sources read
-      in full: Grunbaum (2010, pp. 4-5), who quotes p. 86 and notes that
-      the construction there "is not made explicit" beyond the n = 31
-      example, and Lund-Purdy-Smith (2014, Section 2, Figures 1 and 2), who
-      draw the dual of the n = 31 member and one wedge of its dihedral
-      construction. The coordinates in felsnerSet are the package's own
+      was found. The attribution and parameters come from two sources that
+      were read. Grunbaum (2010, read in full), p. 4: "The main contribution
+      of Felsner [Fe04, p. 86] is ... a family of [aggregates of] lines
+      showing that t(n) <= n/2 - 2 for all n of the form n = 12k + 7 ... The
+      construction is not made explicit, but is illustrated by the example
+      for k = 2 (that is, n = 31)". Lund-Purdy-Smith (2014, Section 2 read),
+      p. 2: "This infinite family of counterexamples is due to Felsner and
+      contains 6k + 7 points with none incident to more than 3k + 2 spanned
+      lines when k is even", with the dual of the n = 31 member (Figure 1)
+      and one wedge of its dihedral construction (Figure 2). The coordinates in felsnerSet are the package's own
       presentation of the family, not taken from p. 86.
   - title: "Research Problems in Discrete Geometry"
     authors:
@@ -119,7 +129,7 @@ sources:
     relationship: background
     note: >-
       Reports Stefan Felsner's infinite 6K + 7 point-line family as a
-      personal communication (so Grunbaum 2010, p. 5, and the 2009 abstract
+      personal communication (so Grunbaum 2010, p. 4, and the 2009 abstract
       of Akiyama et al., p. 1, both read in full); the family is also named
       and drawn in Lund-Purdy-Smith 2014, Section 2. The printed page was
       not read [to check]. The adaptation of Felsner's family is recorded on
@@ -174,35 +184,40 @@ sources:
     id: "https://doi.org/10.1090/cbms/010"
     type: book
     location: "CBMS Regional Conference Series in Mathematics 10, American Mathematical Society (1972), p. 25"
-    relationship: background
+    relationship: independently-proves
     note: >-
-      Not read [to check]: the book is in print and no open copy was found.
-      The 2009 abstract of Akiyama et al. (read in full, p. 1) credits it
-      (p. 25) with counterexamples to Dirac's conjecture for n = 9, 15, 19,
-      25, 31 and 37, and Grunbaum (2010, read) says it gave the first such
-      examples. At those sizes dirac_counterexample_all_ge_8 proves the same
-      bound t <= floor(n/2) by its own constructions. The entry is
-      background until p. 25 is read; once read, it would be an
-      independently-proves entry for those sizes.
+      Not read [to check], p. 25 included: the book is in print and no open
+      copy was found. The credit rests on passages that were read. The 2009
+      abstract of Akiyama et al. (read in full), p. 1: "Some counterexamples
+      were shown for a few small values of n (9, 15, 19, 25, 31, 37) by
+      Grunbaum ([3], p. 25)", where [3] is this book. Grunbaum (2010, read
+      in full), p. 3: "The first new information regarding t(n) emerged in
+      [Gr72], where several examples that contradict the "Dirac-Motzkin"
+      conjecture were given." OEIS A058211 lists the same six sizes. At
+      these odd sizes dirac_counterexample_all_ge_8 (and its odd form)
+      independently proves the same existence bound t <= floor(n/2) =
+      (n - 1)/2, by its own constructions; the credit is limited to that
+      bound at those sizes.
   - title: "Collinearity properties of sets of points"
     authors:
       - "G. A. Dirac"
     id: "https://doi.org/10.1093/qmath/2.1.221"
     type: paper
     location: "Quarterly Journal of Mathematics 2 (1951), 221-227"
-    relationship: background
+    relationship: independently-proves
     note: >-
-      Not read [to check]: the publisher's page refused the request and no
-      open copy was found. Dirac's conjecture, and his configurations
-      attaining t = n/2, are described in Grunbaum (2010, p. 2, Figure 1(a);
-      read in full): for even n, the dual example is two pencils of n/2 - 1
-      lines meeting a further line in the same points, together with that
-      line and the line joining the two apexes, and has t = n/2. For even
-      n >= 8 dirac_counterexample_all_ge_8 independently gives that upper
-      bound t <= n/2 by its own constructions; Dirac's proposed universal
-      lower bound is a different statement and is not proved here. The entry
-      is background until the paper is read; once read, it would be an
-      independently-proves entry for that even-n upper bound.
+      Not read [to check], pp. 221-227: the publisher's page refused the
+      request and no open copy was found. The credit rests on Grunbaum
+      (2010, read in full), p. 3, Figure 1(a): "Duals (in the projective
+      plane) of the typical examples constructed by Dirac [Di51] to show
+      that t(n) = n/2. For even n = 2k, the example A consists of two
+      pencils of n/2 - 1 concurrent lines ... together with that line and
+      the line connecting the two apexes of the pencils ... and in general
+      t(A) = n/2." For even n >= 8 dirac_counterexample_all_ge_8
+      independently proves the existence upper bound t <= n/2 by its own
+      constructions; the credit is limited to that bound. Dirac's proposed
+      universal lower bound is a different statement and is not proved
+      here.
   - title: "A pseudoline counterexample to the strong Dirac conjecture"
     authors:
       - "Ben Lund"
