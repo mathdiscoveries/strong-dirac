@@ -30,7 +30,9 @@ $\mathbb{R}^2$ proving:
   formalization proves all 12 classes self-contained.
 - **Felsner (2004)**, *Geometric Graphs and Arrangements*, p. 86: the source of
   the infinite $6K + 7$ family adapted here (`felsnerSet` and its 1-, 4- and
-  8-deletions, the deletions being this package's). Page 86 was not read; the
+  8-deletions). The package gives explicit coordinates and Lean proofs for its
+  1-, 4- and 8-deletions; Grünbaum (2010, p. 8) already lists single deletions
+  of Felsner examples at $n = 42$ and $54$. Page 86 was not read; the
   attribution follows Grünbaum (2010) and Lund–Purdy–Smith (2014), both read.
 - **Grünbaum (2009)**, *A catalogue of simplicial arrangements in the real
   projective plane*, *Ars Math. Contemp.* 2, 1–25: `h3Pts` is the dual of

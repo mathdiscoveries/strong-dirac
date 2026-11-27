@@ -94,9 +94,12 @@ sources:
       for even K, deficit 3/2. StrongDirac/TightnessAndMod12.lean formalizes
       its even-parameter members as felsnerSet (n = 12k + 7, the Euclidean
       Felsner theorem that dirac_counterexample_all_ge_8 uses for that class)
-      with a 1-deletion (12k + 6), and adapts it by deletions that are this
-      package's own: a 4-deletion (felsnerDel4, 12k + 3 and 12k + 2) and, in
-      StrongDirac/R15_2_1.lean, an 8-deletion (12k + 11, k >= 2). Page 86
+      with a 1-deletion (12k + 6), and adapts it by a 4-deletion
+      (felsnerDel4, 12k + 3 and 12k + 2) and, in StrongDirac/R15_2_1.lean,
+      an 8-deletion (12k + 11, k >= 2). Grunbaum (2010, p. 8) already lists
+      one-line deletions of Felsner examples at n = 42 and 54; the 4- and
+      8-deletions are not listed in the sources read. The package gives
+      explicit coordinates and Lean proofs for all of them. Page 86
       itself was not read [to check]: the book is in print and no open copy
       was found. The attribution and parameters come from two sources read
       in full: Grunbaum (2010, pp. 4-5), who quotes p. 86 and notes that
@@ -159,8 +162,11 @@ sources:
       structure of h3Pts and of o23Pts with the two deleted points
       restored: both match the catalogue's f-, t- and r-vectors exactly
       (A(15,1): f0 = 31, t = (15, 10, 0, 6), every line on 6 vertices;
-      A(25,5): f0 = 81, t = (36, 32, 0, 8, 4, 0, 1), r8 = 5, r10 = 20). The
-      deletions are this package's. Lund-Purdy-Smith (2014, Section 2) also
+      A(25,5): f0 = 81, t = (36, 32, 0, 8, 4, 0, 1), r8 = 5, r10 = 20).
+      Grunbaum (2010, p. 8) lists the one-line deletion of A(15,1) for
+      n = 14. For n = 23 this formalization uses two deletions from A(25,5),
+      where his table uses A(24,2) with one line deleted. Lund-Purdy-Smith
+      (2014, Section 2) also
       single out A(25,5) from this catalogue.
   - title: "Arrangements and Spreads"
     authors:
