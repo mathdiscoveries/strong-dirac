@@ -110,7 +110,7 @@ sources:
       was found. The attribution and parameters come from two sources that
       were read. Grunbaum (2010, read in full), p. 4: "The main contribution
       of Felsner [Fe04, p. 86] is ... a family of [aggregates of] lines
-      showing that t(n) <= n/2 - 2 for all n of the form n = 12k + 7 ... The
+      showing that t(n) <= ceil(n/2) - 2 for all n of the form n = 12k + 7 ... The
       construction is not made explicit, but is illustrated by the example
       for k = 2 (that is, n = 31)". Lund-Purdy-Smith (2014, Section 2 read),
       p. 2: "This infinite family of counterexamples is due to Felsner and
@@ -210,7 +210,7 @@ sources:
       request and no open copy was found. The credit rests on Grunbaum
       (2010, read in full), p. 3, Figure 1(a): "Duals (in the projective
       plane) of the typical examples constructed by Dirac [Di51] to show
-      that t(n) = n/2. For even n = 2k, the example A consists of two
+      that t(n) = ceil(n/2). For even n = 2k, the example A consists of two
       pencils of n/2 - 1 concurrent lines ... together with that line and
       the line connecting the two apexes of the pencils ... and in general
       t(A) = n/2." For even n >= 8 dirac_counterexample_all_ge_8
