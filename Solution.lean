@@ -46,7 +46,7 @@ theorem familyA_deficit_five_halves (s : ℕ) :
       NonCollinearR2 P ∧
       (∀ a ∈ P, lineCountR2 P a ≤ 30 * s + 24) ∧
       (∃ a ∈ P, lineCountR2 P a = 30 * s + 24) :=
-  StrongDirac.DeficitFiveHalves.deficit52_familyA_euclidean s
+  StrongDirac.R17.r17_2_1_familyA_euclidean s
 
 theorem familyB_deficit_five_halves (s : ℕ) :
     ∃ P : Finset (ℝ × ℝ),
@@ -54,7 +54,7 @@ theorem familyB_deficit_five_halves (s : ℕ) :
       NonCollinearR2 P ∧
       (∀ a ∈ P, lineCountR2 P a ≤ 30 * s + 32) ∧
       (∃ a ∈ P, lineCountR2 P a = 30 * s + 32) :=
-  StrongDirac.DeficitFiveHalves.deficit52_familyB_euclidean s
+  StrongDirac.R17.r17_2_1_familyB_euclidean s
 
 theorem familyC_deficit_five_halves {s : ℕ} (hs : 1 ≤ s) :
     ∃ P : Finset (ℝ × ℝ),
@@ -62,7 +62,7 @@ theorem familyC_deficit_five_halves {s : ℕ} (hs : 1 ≤ s) :
       NonCollinearR2 P ∧
       (∀ a ∈ P, lineCountR2 P a ≤ 30 * s + 28) ∧
       (∃ a ∈ P, lineCountR2 P a = 30 * s + 28) :=
-  StrongDirac.TightnessAndMod12.deficit52_familyC_euclidean hs
+  StrongDirac.TightnessAndMod12.r17_2_3_familyC_euclidean hs
 
 theorem refutes_grunbaum_2010 (s : ℕ) :
     (∃ P : Finset (ℝ × ℝ), P.card = 60 * s + 53 ∧ NonCollinearR2 P ∧
@@ -73,6 +73,6 @@ theorem refutes_grunbaum_2010 (s : ℕ) :
       ∀ a ∈ P, lineCountR2 P a ≤ grunbaumVal P.card - 2) ∧
     (∃ P : Finset (ℝ × ℝ), P.card = 60 * s + 68 ∧ NonCollinearR2 P ∧
       ∀ a ∈ P, lineCountR2 P a ≤ grunbaumVal P.card - 2) :=
-  StrongDirac.DeficitFiveHalves.deficit52_refutes_grunbaum s
+  StrongDirac.R17.r17_2_1_refutes_grunbaum s
 
 end StrongDiracChallenge

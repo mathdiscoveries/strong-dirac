@@ -10,7 +10,7 @@ import Mathlib.Tactic
 # Projective Plane `ℝP²`, Spanned Line Counts, and Euclidean `ℝ²` Embedding
 
 Provides the shared geometric foundation for the `StrongDirac` formalizations
-of `12j+11 family` and `deficit-5/2 families`:
+of `R15-2-1` and `R17-2-1`:
 - Integer homogeneous points `Pt := ℤ × ℤ × ℤ`, cross product `cross`,
   `3 × 3` determinant `det`, proportionality `SamePt`, and well-formed sets
   `Proper` and `NonCollinear`.

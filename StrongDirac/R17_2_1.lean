@@ -7,9 +7,9 @@ public import Mathlib.Data.Int.Interval
 import Mathlib.Tactic
 
 /-!
-# Unconditional Proof of `deficit-5/2 families`: Knight-Lattice Deficit-`5/2` Families
+# Unconditional Proof of `R17-2-1`: Knight-Lattice Deficit-`5/2` Families
 
-Formalizes both infinite knight-lattice families of `deficit-5/2 families` unconditionally for ALL `s ≥ 0`:
+Formalizes both infinite knight-lattice families of `R17-2-1` unconditionally for ALL `s ≥ 0`:
 - **Family A** (`(a, e, b, m) = (9s + 7, 3s + 2, 8s + 6, 5s + 3)`):
   `n = 60s + 53` points, non-collinear, maximum spanned line count **equal to**
   `30s + 24 = (n - 5) / 2` (deficit `5/2`).
@@ -27,7 +27,7 @@ Proof architecture (100% pure Lean kernel, zero `sorry`, zero `native_decide`):
    `decide` certificates (`16` certificates total).
 4. Exact tightness at the top axis point `(1, 0, a)` via explicit disjoint label witnesses of
    cardinality `30s + 24` (Family A) and `30s + 32` (Family B).
-5. Projective-to-Euclidean lift (`deficit52_familyA_euclidean`, `deficit52_familyB_euclidean`)
+5. Projective-to-Euclidean lift (`r17_2_1_familyA_euclidean`, `r17_2_1_familyB_euclidean`)
    giving explicit non-collinear Euclidean sets in `ℝ²` attaining deficit `5/2` for every `s ≥ 0`.
 -/
 
@@ -35,7 +35,7 @@ Proof architecture (100% pure Lean kernel, zero `sorry`, zero `native_decide`):
 
 namespace StrongDirac
 
-namespace DeficitFiveHalves
+namespace R17
 
 open HullCert
 
@@ -92,11 +92,11 @@ def knightSet (a e b m : ℕ) : Finset Pt :=
   ((parityRange m).image (fun c => (2, -1, c))) ∪
   {(0, 0, 1)}
 
-/-- Family A of `deficit-5/2 families`: `(9s + 7, 3s + 2, 8s + 6, 5s + 3)` (`n = 60s + 53`). -/
+/-- Family A of `R17-2-1`: `(9s + 7, 3s + 2, 8s + 6, 5s + 3)` (`n = 60s + 53`). -/
 def familyA (s : ℕ) : Finset Pt :=
   knightSet (9 * s + 7) (3 * s + 2) (8 * s + 6) (5 * s + 3)
 
-/-- Family B of `deficit-5/2 families`: `(9s + 9, 3s + 2, 8s + 8, 5s + 5)` (`n = 60s + 69`). -/
+/-- Family B of `R17-2-1`: `(9s + 9, 3s + 2, 8s + 8, 5s + 5)` (`n = 60s + 69`). -/
 def familyB (s : ℕ) : Finset Pt :=
   knightSet (9 * s + 9) (3 * s + 2) (8 * s + 8) (5 * s + 5)
 
@@ -713,7 +713,7 @@ private theorem knightSet_branch_upper
     exact hall_kn c hc
   · exact (knightSet_lineCount_origin ..).trans h8
 
-/-- **Upper Bound for Family A (`deficit-5/2 families`)**: for every `s ≥ 0` and every `p ∈ familyA s`,
+/-- **Upper Bound for Family A (`R17-2-1`)**: for every `s ≥ 0` and every `p ∈ familyA s`,
 `projLineCount (familyA s) p ≤ 30 * s + 24`. -/
 theorem familyA_lineCount_le (s : ℕ) :
     ∀ p ∈ familyA s, projLineCount (familyA s) p ≤ 30 * s + 24 := by
@@ -735,7 +735,7 @@ theorem familyA_lineCount_le (s : ℕ) :
       (by omega) (by omega) (by omega) (by omega) (by omega)
       cert_b2_Xa cert_b2_Xe cert_b2_S cert_b2_N2
 
-/-- **Upper Bound for Family B (`deficit-5/2 families`)**: for every `s ≥ 0` and every `p ∈ familyB s`,
+/-- **Upper Bound for Family B (`R17-2-1`)**: for every `s ≥ 0` and every `p ∈ familyB s`,
 `projLineCount (familyB s) p ≤ 30 * s + 32`. -/
 theorem familyB_lineCount_le (s : ℕ) :
     ∀ p ∈ familyB s, projLineCount (familyB s) p ≤ 30 * s + 32 := by
@@ -1140,12 +1140,12 @@ theorem familyB_top_lineCount (s : ℕ) :
     mem_knightSet_iff.mpr (Or.inl ⟨_, Finset.mem_union_left _ ha, rfl⟩)
   exact le_antisymm (familyB_lineCount_le s _ hp) hge
 
-/-! ### Main Euclidean Headline Theorems for `deficit-5/2 families` -/
+/-! ### Main Euclidean Headline Theorems for `R17-2-1` -/
 
-/-- **Main Euclidean Headline Theorem (`deficit-5/2 families`, Family A)**: for every `s ≥ 0`, there exists
+/-- **Main Euclidean Headline Theorem (`R17-2-1`, Family A)**: for every `s ≥ 0`, there exists
 a non-collinear set `P` of `60s + 53` points in `ℝ²` whose maximum spanned line count per
 point is **equal to** `30s + 24 = (P.card - 5) / 2` (deficit `5/2`). -/
-theorem deficit52_familyA_euclidean (s : ℕ) :
+theorem r17_2_1_familyA_euclidean (s : ℕ) :
     ∃ P : Finset (ℝ × ℝ),
       P.card = 60 * s + 53 ∧
       NonCollinearR2 P ∧
@@ -1157,10 +1157,10 @@ theorem deficit52_familyA_euclidean (s : ℕ) :
   exact exists_euclidean_set_eq (knightSet_proper ..) (familyA_card s) (knightSet_nonCollinear ..)
     (familyA_lineCount_le s) ⟨_, hp, le_of_eq (familyA_top_lineCount s).symm⟩
 
-/-- **Main Euclidean Headline Theorem (`deficit-5/2 families`, Family B)**: for every `s ≥ 0`, there exists
+/-- **Main Euclidean Headline Theorem (`R17-2-1`, Family B)**: for every `s ≥ 0`, there exists
 a non-collinear set `P` of `60s + 69` points in `ℝ²` whose maximum spanned line count per
 point is **equal to** `30s + 32 = (P.card - 5) / 2` (deficit `5/2`). -/
-theorem deficit52_familyB_euclidean (s : ℕ) :
+theorem r17_2_1_familyB_euclidean (s : ℕ) :
     ∃ P : Finset (ℝ × ℝ),
       P.card = 60 * s + 69 ∧
       NonCollinearR2 P ∧
@@ -1178,7 +1178,7 @@ def grunbaumVal (n : ℕ) : ℕ := 2 * (n / 4)
 /-- **Refutation of Grünbaum's (2010) Conjecture** in four residue classes mod 12
 (`n ≡ 52, 53, 8, 9 (mod 60)`, i.e. `m = 4, 5, 8, 9`): for every `s ≥ 0`, deleting 0 or 1
 points from Family A or Family B gives non-collinear Euclidean sets beating `G(n)` by `2`. -/
-theorem deficit52_refutes_grunbaum (s : ℕ) :
+theorem r17_2_1_refutes_grunbaum (s : ℕ) :
     (∃ P : Finset (ℝ × ℝ), P.card = 60 * s + 53 ∧ NonCollinearR2 P ∧
       ∀ a ∈ P, lineCountR2 P a ≤ grunbaumVal P.card - 2) ∧
     (∃ P : Finset (ℝ × ℝ), P.card = 60 * s + 52 ∧ NonCollinearR2 P ∧
@@ -1217,14 +1217,14 @@ theorem deficit52_refutes_grunbaum (s : ℕ) :
     obtain ⟨P, hPc, hPnc, hPbd⟩ := exists_euclidean_set_le hX'_proper hX'_card hX'_nc hX'_bd
     exact ⟨P, hPc, hPnc, fun x hx => by rw [hPc]; exact hPbd x hx⟩
   refine ⟨?_, ?_, ?_, ?_⟩
-  · obtain ⟨P, hPc, hPnc, hPbd, _⟩ := deficit52_familyA_euclidean s
+  · obtain ⟨P, hPc, hPnc, hPbd, _⟩ := r17_2_1_familyA_euclidean s
     refine ⟨P, hPc, hPnc, fun x hx => ?_⟩
     have hG : 30 * s + 24 ≤ grunbaumVal P.card - 2 := by rw [hPc]; unfold grunbaumVal; omega
     exact (hPbd x hx).trans hG
   · refine hdel (familyA_card s) (fun p hp => ?_)
     have hG : 30 * s + 24 ≤ grunbaumVal (60 * s + 52) - 2 := by unfold grunbaumVal; omega
     exact (familyA_lineCount_le s p hp).trans hG
-  · obtain ⟨P, hPc, hPnc, hPbd, _⟩ := deficit52_familyB_euclidean s
+  · obtain ⟨P, hPc, hPnc, hPbd, _⟩ := r17_2_1_familyB_euclidean s
     refine ⟨P, hPc, hPnc, fun x hx => ?_⟩
     have hG : 30 * s + 32 ≤ grunbaumVal P.card - 2 := by rw [hPc]; unfold grunbaumVal; omega
     exact (hPbd x hx).trans hG
@@ -1232,6 +1232,6 @@ theorem deficit52_refutes_grunbaum (s : ℕ) :
     have hG : 30 * s + 32 ≤ grunbaumVal (60 * s + 68) - 2 := by unfold grunbaumVal; omega
     exact (familyB_lineCount_le s p hp).trans hG
 
-end DeficitFiveHalves
+end R17
 
 end StrongDirac

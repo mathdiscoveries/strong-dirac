@@ -10,7 +10,7 @@ import Mathlib.Tactic
 
 Provides a completely general, 100% unconditional Lean 4 soundness proof for
 the interval-hull convexity method used to prove the all-`s` upper bound of
-`deficit-5/2 families`:
+`R17-2-1`:
 - For any finite projective point set `X` partitioned into linear pencil classes
   `(p, q, rho, B1, B0)` (plus points parallel to a base point `p0 = (1, q0, c)`),
   the scaled projective coordinate `z(x) = Lam * (x.2.2 - c * x.1) / (x.2.1 - q0 * x.1)`

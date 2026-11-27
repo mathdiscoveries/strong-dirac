@@ -6,7 +6,7 @@ public import Mathlib.Data.Int.Interval
 import Mathlib.Tactic
 
 /-!
-# Unconditional Proof of `12j+11 family`: Dirac Counterexamples for All `n = 12j + 11` (`j ≥ 2`)
+# Unconditional Proof of `R15-2-1`: Dirac Counterexamples for All `n = 12j + 11` (`j ≥ 2`)
 
 Formalizes the infinite family `S_K` (`K = 2j + 2`, even `K ≥ 6`, `n = 6K - 1 = 12j + 11`)
 answering the open case `n = 12k + 11` (`k ≥ 4`) of Akiyama, Ito, Kobayashi, and Nakamura
@@ -15,14 +15,14 @@ answering the open case `n = 12k + 11` (`k ≥ 4`) of Akiyama, Ito, Kobayashi, a
 - every point `p ∈ S_K j` lies on at most `6j + 5 = (n - 1) / 2` spanned projective lines;
 - via `exists_euclidean_set_le`, for every `j ≥ 2` there exists a non-collinear Euclidean
   point set `P : Finset (ℝ × ℝ)` of cardinality `12j + 11` with `lineCountR2 P a ≤ 6j + 5`
-  for every `a ∈ P` (`class12j11_euclidean`).
+  for every `a ∈ P` (`r15_2_1_euclidean`).
 -/
 
 @[expose] public section
 
 namespace StrongDirac
 
-namespace Class12kPlus11
+namespace R15
 
 /-- Integer parameter `K = 2j + 2` (even, `K ≥ 6` for `j ≥ 2`). -/
 def Kval (j : ℕ) : ℤ := 2 * (j : ℤ) + 2
@@ -47,7 +47,7 @@ def Zpts (K : ℤ) : Finset Pt := (JZset K).image (fun c => (1, 1, -c))
 /-- The four median/infinity points `{(1,-1,0), (1,2,0), (2,1,0), (0,0,1)}`. -/
 def Mpts : Finset Pt := {(1, -1, 0), (1, 2, 0), (2, 1, 0), (0, 0, 1)}
 
-/-- The `12j+11 family` projective point set `S_K` for `K = 2j + 2` (`|S_K j| = 12j + 11`). -/
+/-- The `R15-2-1` projective point set `S_K` for `K = 2j + 2` (`|S_K j| = 12j + 11`). -/
 def S_K (j : ℕ) : Finset Pt :=
   let K := Kval j
   Xpts K ∪ Ypts K ∪ Zpts K ∪ Mpts
@@ -993,9 +993,9 @@ theorem lineCount_Z {j : ℕ} (hj : 2 ≤ j) {s : ℤ} (hs : s ∈ JZset (Kval j
             (Finset.mem_erase.mpr ⟨by omega, Finset.mem_erase.mpr ⟨by omega,
               Finset.mem_erase.mpr ⟨by omega, Finset.mem_Icc.mpr (by omega)⟩⟩⟩))
 
-/-! ### Main Theorems for `12j+11 family` -/
+/-! ### Main Theorems for `R15-2-1` -/
 
-/-- **Main Projective Theorem (`12j+11 family`)**: for every `j ≥ 2`, every point of `S_K j`
+/-- **Main Projective Theorem (`R15-2-1`)**: for every `j ≥ 2`, every point of `S_K j`
 lies on at most `6j + 5 = ((12j + 11) - 1) / 2` spanned projective lines. -/
 theorem S_K_lineCount_le {j : ℕ} (hj : 2 ≤ j) :
     ∀ p ∈ S_K j, projLineCount (S_K j) p ≤ 6 * j + 5 := by
@@ -1014,12 +1014,12 @@ theorem S_K_lineCount_le {j : ℕ} (hj : 2 ≤ j) :
     exact lineCount_M2 hj
   · exact lineCount_W hj
 
-/-- **Main Euclidean Headline Theorem (`12j+11 family`)**: for every `j ≥ 2`, there exists a
+/-- **Main Euclidean Headline Theorem (`R15-2-1`)**: for every `j ≥ 2`, there exists a
 non-collinear set `P` of `12j + 11` points in the Euclidean plane `ℝ²` such that every
 point of `P` lies on at most `6j + 5 = (P.card - 1) / 2` distinct lines spanned by `P`.
 This settles the open case `n = 12k + 11` (`k ≥ 4`) of Akiyama, Ito, Kobayashi, and
 Nakamura (2011). -/
-theorem class12j11_euclidean {j : ℕ} (hj : 2 ≤ j) :
+theorem r15_2_1_euclidean {j : ℕ} (hj : 2 ≤ j) :
     ∃ P : Finset (ℝ × ℝ),
       P.card = 12 * j + 11 ∧
       NonCollinearR2 P ∧
@@ -1027,6 +1027,6 @@ theorem class12j11_euclidean {j : ℕ} (hj : 2 ≤ j) :
   exists_euclidean_set_le (S_K_proper j) (S_K_card hj) (S_K_nonCollinear hj)
     (S_K_lineCount_le hj)
 
-end Class12kPlus11
+end R15
 
 end StrongDirac

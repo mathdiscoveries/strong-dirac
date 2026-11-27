@@ -1,9 +1,9 @@
 module
 
 public import StrongDirac.Projective
-public import StrongDirac.Class12kPlus11
+public import StrongDirac.R15_2_1
 public import StrongDirac.HullCert
-public import StrongDirac.DeficitFiveHalves
+public import StrongDirac.R17_2_1
 public import Mathlib.Data.Int.Interval
 public import Mathlib.Analysis.Real.Sqrt
 
@@ -13,25 +13,25 @@ import Mathlib.Tactic
 # Tightness, All-`n ≥ 8` Mod-12 Dirac Counterexamples, and 12-Class Mod-60 Grünbaum Refutation
 
 Extends `StrongDirac` unconditionally (zero `sorry`, zero `native_decide`, standard 3 axioms only):
-1. **Target A (`12j+11 family` Exact Tightness & Closing `j = 0, 1`)**:
+1. **Target A (`R15-2-1` Exact Tightness & Closing `j = 0, 1`)**:
    - Exact tightness `projLineCount (S_K j) (1, 0, -Kval j) = 6 * j + 5` for all `j ≥ 2`,
-     and Euclidean exact tightness `class12j11_euclidean_tight`.
+     and Euclidean exact tightness `r15_2_1_euclidean_tight`.
    - Quadratic-ring projective-to-Euclidean lift (`ℤ[φ]` and `ℤ[√2]`), closing `j = 0`
      (`n = 11`, regular pentagon sides + diagonals + `ℓ_∞`, `t ≤ 5`) and `j = 1`
      (`n = 23`, octagon set `O25` minus 2 points, `t ≤ 10 ≤ 11`), giving
-     `class12j11_all_j_euclidean` for every `j : ℕ`.
+     `r15_2_1_all_j_euclidean` for every `j : ℕ`.
 2. **Target B (Self-Contained All-`n ≥ 8` Mod-12 Theorem)**:
    - Formalizes the 4-direction square grid `sqGrid a` (`n = 4a + 5` and `4a + 4`, all
      `n ≡ 0, 1, 4, 5, 8, 9 (mod 12)` for `n ≥ 8`), Felsner's deficit-`3/2` family
      `felsnerSet k` (`n = 12k + 7` and `12k + 6` for `k ≥ 1`), the 4-deletion Felsner family
      `felsnerDel4 k` (`n = 12k + 3` and `12k + 2` for `k ≥ 3`), and combines them with
-     `12j+11 family` (`12j + 11` and `12j + 10`) plus finite witnesses below `38` to prove
+     `R15-2-1` (`12j + 11` and `12j + 10`) plus finite witnesses below `38` to prove
      `dirac_counterexample_all_ge_8` for EVERY `n ≥ 8` without external citations.
 3. **Target C (12-Class Mod-60 Refutation of Grünbaum's 2010 Conjecture)**:
-   - Proves `Family C` Family C (`B \ D_8`, `n = 60s + 61`, exact `t = 30s + 28 = G(n) - 2`
+   - Proves `R17-2-3` Family C (`B \ D_8`, `n = 60s + 61`, exact `t = 30s + 28 = G(n) - 2`
      for all `s ≥ 1`, refuting Grünbaum by `2` in all 6 even-half mod-12 classes
      `n ≡ 0, 1, 8, 9, 52, 53 (mod 60)`).
-   - Proves `Family E4` Family E4 (`B \ D_4`, `n = 60s + 65`, `t ≤ 30s + 31 = G(n) - 1` for
+   - Proves `R17-2-4` Family E4 (`B \ D_4`, `n = 60s + 65`, `t ≤ 30s + 31 = G(n) - 1` for
      all `s ≥ 1`) and two new knight-lattice deletion families `A \ D_8` (`n = 60s + 45`,
      `t ≤ 30s + 21 = G(n) - 1`) and `A \ D_4` (`n = 60s + 49`, `t ≤ 30s + 23 = G(n) - 1`)
      for all `s ≥ 2`, refuting Grünbaum across **12 residue classes mod 60**
@@ -44,7 +44,7 @@ namespace StrongDirac
 
 namespace TightnessAndMod12
 
-open StrongDirac.Class12kPlus11 StrongDirac.HullCert StrongDirac.DeficitFiveHalves
+open StrongDirac.R15 StrongDirac.HullCert StrongDirac.R17
 
 /-! ### Section 1: Subset Monotonicity, Ordinary-Line Deletion, and Quadratic-Field Lift -/
 
@@ -620,7 +620,7 @@ lemma sqrt2_sq : (Real.sqrt 2) ^ 2 = (0 : ℤ) * Real.sqrt 2 + (2 : ℤ) := by
   push_cast
   linarith
 
-/-! ### Section 2: Target A — `12j+11 family` Exact Tightness (`j ≥ 2`) and Closing `j = 0, 1` -/
+/-! ### Section 2: Target A — `R15-2-1` Exact Tightness (`j ≥ 2`) and Closing `j = 0, 1` -/
 
 /-- Exact tightness witness for `S_K j` (`j ≥ 2`) at `(1, 0, -Kval j)`:
 `projLineCount (S_K j) (1, 0, -Kval j) = 6 * j + 5`. -/
@@ -702,9 +702,9 @@ theorem S_K_top_lineCount {j : ℕ} (hj : 2 ≤ j) :
     exact le_projLineCount_of_witness (S_K_proper j) hp W hW_sub hW_wit
   exact le_antisymm hle hge
 
-/-- **Exact Tightness Euclidean Headline for `12j+11 family` (`j ≥ 2`)**: every point lies on at most
+/-- **Exact Tightness Euclidean Headline for `R15-2-1` (`j ≥ 2`)**: every point lies on at most
 `6j + 5` spanned lines, and some point lies on **exact equality** `6j + 5`. -/
-theorem class12j11_euclidean_tight {j : ℕ} (hj : 2 ≤ j) :
+theorem r15_2_1_euclidean_tight {j : ℕ} (hj : 2 ≤ j) :
     ∃ P : Finset (ℝ × ℝ),
       P.card = 12 * j + 11 ∧
       NonCollinearR2 P ∧
@@ -731,9 +731,9 @@ def x11Pts : List QPt :=
 
 theorem cert_x11 : checkQSet 1 1 x11Pts 5 = true := by decide
 
-/-- Closing `j = 0` (`n = 11`) of `12j+11 family`: explicit `11`-point Euclidean set with
+/-- Closing `j = 0` (`n = 11`) of `R15-2-1`: explicit `11`-point Euclidean set with
 every point on at most `5 = (11 - 1)/2` spanned lines. -/
-theorem class12j11_j0_euclidean :
+theorem r15_2_1_j0_euclidean :
     ∃ P : Finset (ℝ × ℝ),
       P.card = 11 ∧ NonCollinearR2 P ∧ ∀ a ∈ P, lineCountR2 P a ≤ 5 :=
   exists_euclidean_of_checkQSet phi_sq phi_ker cert_x11
@@ -760,9 +760,9 @@ def o23Pts : List QPt :=
 
 theorem cert_o23 : checkQSet 0 2 o23Pts 10 = true := by decide
 
-/-- Closing `j = 1` (`n = 23`) of `12j+11 family`: explicit `23`-point Euclidean set with
+/-- Closing `j = 1` (`n = 23`) of `R15-2-1`: explicit `23`-point Euclidean set with
 every point on at most `10` (and hence `≤ 11 = (23 - 1)/2`) spanned lines. -/
-theorem class12j11_j1_euclidean :
+theorem r15_2_1_j1_euclidean :
     ∃ P : Finset (ℝ × ℝ),
       P.card = 23 ∧ NonCollinearR2 P ∧ ∀ a ∈ P, lineCountR2 P a ≤ 10 :=
   exists_euclidean_of_checkQSet sqrt2_sq sqrt2_ker cert_o23
@@ -770,15 +770,15 @@ theorem class12j11_j1_euclidean :
 /-- **Complete All-`j` Theorem for `n = 12j + 11`**: for **every** `j : ℕ` (`j = 0, 1, 2, ...`),
 there exists a non-collinear Euclidean set of `12j + 11` points with every point on at most
 `6j + 5 = (n - 1) / 2` spanned lines. -/
-theorem class12j11_all_j_euclidean (j : ℕ) :
+theorem r15_2_1_all_j_euclidean (j : ℕ) :
     ∃ P : Finset (ℝ × ℝ),
       P.card = 12 * j + 11 ∧ NonCollinearR2 P ∧ ∀ a ∈ P, lineCountR2 P a ≤ 6 * j + 5 := by
   match j with
-  | 0 => exact class12j11_j0_euclidean
+  | 0 => exact r15_2_1_j0_euclidean
   | 1 =>
-    obtain ⟨P, hPc, hPnc, hPbd⟩ := class12j11_j1_euclidean
+    obtain ⟨P, hPc, hPnc, hPbd⟩ := r15_2_1_j1_euclidean
     exact ⟨P, hPc, hPnc, fun a ha => (hPbd a ha).trans (by omega)⟩
-  | j + 2 => exact class12j11_euclidean (by omega)
+  | j + 2 => exact r15_2_1_euclidean (by omega)
 
 /-! ### Section 3: Target B — Self-Contained All-`n ≥ 8` Mod-12 Dirac Counterexamples -/
 
@@ -1696,8 +1696,8 @@ theorem felsnerDel4_mod12_euclidean {k : ℕ} (hk : 3 ≤ k) :
   exact ⟨exists_euclidean_set_le hprop hcard hnc hbound,
     exists_euclidean_erase_one hprop hcard hinf hnc_erase hbound⟩
 
-/-- Deleting `(0, 0, 1)` from `12j+11 family`'s `S_K j` (`j ≥ 2`) covers all `n = 12j + 10` (`n ≥ 34`). -/
-theorem class12j11_erase_one_euclidean {j : ℕ} (hj : 2 ≤ j) :
+/-- Deleting `(0, 0, 1)` from `R15-2-1`'s `S_K j` (`j ≥ 2`) covers all `n = 12j + 10` (`n ≥ 34`). -/
+theorem r15_2_1_erase_one_euclidean {j : ℕ} (hj : 2 ≤ j) :
     ∃ P : Finset (ℝ × ℝ),
       P.card = 12 * j + 10 ∧ NonCollinearR2 P ∧ ∀ a ∈ P, lineCountR2 P a ≤ 6 * j + 5 := by
   have hK : 6 ≤ Kval j := by unfold Kval; omega
@@ -1833,10 +1833,10 @@ theorem dirac_counterexample_all_ge_8 (n : ℕ) (hn : 8 ≤ n) :
       subst hn22
       obtain ⟨P, hPc, hPnc, hPbd⟩ := exists_euclidean_of_checkQSet sqrt2_sq sqrt2_ker cert_n22
       exact ⟨P, hPc, hPnc, fun x hx => (hPbd x hx).trans (by omega)⟩
-    · obtain ⟨P, hPc, hPnc, hPbd⟩ := class12j11_erase_one_euclidean hq2
+    · obtain ⟨P, hPc, hPnc, hPbd⟩ := r15_2_1_erase_one_euclidean hq2
       exact ⟨P, by omega, hPnc, fun x hx => (hPbd x hx).trans (by omega)⟩
-  · -- n = 12q + 11 (q ≥ 0), complete all-j 12j+11 family!
-    obtain ⟨P, hPc, hPnc, hPbd⟩ := class12j11_all_j_euclidean q
+  · -- n = 12q + 11 (q ≥ 0), complete all-j R15-2-1!
+    obtain ⟨P, hPc, hPnc, hPbd⟩ := r15_2_1_all_j_euclidean q
     exact ⟨P, by omega, hPnc, fun x hx => (hPbd x hx).trans (by omega)⟩
 
 /-- Odd-`n` corollary: for every odd `n ≥ 9`, every point lies on at most `(n - 1) / 2` lines. -/
@@ -1858,10 +1858,10 @@ def knightD8 (m2 : ℤ) : Finset Pt :=
 def knightD4 (m2 : ℤ) : Finset Pt :=
   {(1, 2, m2), (1, 2, -m2), (1, -2, m2), (1, -2, -m2)}
 
-/-- `Family C` Family C (`s ≥ 1`): `familyB s \ D_8`, size `60s + 61 = 12(5s+5) + 1`, exact `t = 30s + 28`. -/
+/-- `R17-2-3` Family C (`s ≥ 1`): `familyB s \ D_8`, size `60s + 61 = 12(5s+5) + 1`, exact `t = 30s + 28`. -/
 def familyC (s : ℕ) : Finset Pt := familyB s \ knightD8 (5 * (s : ℤ) + 3)
 
-/-- `Family E4` Family E4 (`s ≥ 1`): `familyB s \ D_4`, size `60s + 65`, `t ≤ 30s + 31`. -/
+/-- `R17-2-4` Family E4 (`s ≥ 1`): `familyB s \ D_4`, size `60s + 65`, `t ≤ 30s + 31`. -/
 def familyBE4 (s : ℕ) : Finset Pt := familyB s \ knightD4 (5 * (s : ℤ) + 3)
 
 /-- New 8-deletion Family `A \ D_8` (`s ≥ 2`): size `60s + 45`, `t ≤ 30s + 21`. -/
@@ -2543,7 +2543,7 @@ private lemma familyA_isOrd {s : ℕ} (hs : 2 ≤ s) {p q : Pt}
 
 /-! #### Upper Bounds and Exact Tightness for `C = B \ D_8`, `E4 = B \ D_4`, `A \ D_8`, `A \ D_4` -/
 
-/-- **Upper Bound for `Family C` Family C (`s ≥ 1`)**: every point of `familyC s` lies on at most
+/-- **Upper Bound for `R17-2-3` Family C (`s ≥ 1`)**: every point of `familyC s` lies on at most
 `30s + 28 = (n - 5) / 2` spanned lines. -/
 theorem familyC_lineCount_le {s : ℕ} (hs : 1 ≤ s) :
     ∀ p ∈ familyC s, projLineCount (familyC s) p ≤ 30 * s + 28 := by
@@ -2754,7 +2754,7 @@ theorem familyC_lineCount_le {s : ℕ} (hs : 1 ≤ s) :
   · exact (projLineCount_subset_le Finset.sdiff_subset _).trans
       ((knightSet_lineCount_origin ..).trans (by omega))
 
-/-- **Exact Tightness for `Family C` Family C (`s ≥ 1`)**: `(1, 0, 9s + 9)` lies on **exactly**
+/-- **Exact Tightness for `R17-2-3` Family C (`s ≥ 1`)**: `(1, 0, 9s + 9)` lies on **exactly**
 `30s + 28` spanned lines of `familyC s`. -/
 theorem familyC_top_lineCount {s : ℕ} (hs : 1 ≤ s) :
     projLineCount (familyC s) (1, 0, ((9 * s + 9 : ℕ) : ℤ)) = 30 * s + 28 := by
@@ -2831,7 +2831,7 @@ theorem familyC_top_lineCount {s : ℕ} (hs : 1 ≤ s) :
     omega
   exact le_antisymm hle hge
 
-/-- **Upper Bound for `Family E4` Family E4 (`s ≥ 1`)**: every point of `familyBE4 s` lies on at most
+/-- **Upper Bound for `R17-2-4` Family E4 (`s ≥ 1`)**: every point of `familyBE4 s` lies on at most
 `30s + 31 = G(60s + 65) - 1` spanned lines. -/
 theorem familyBE4_lineCount_le {s : ℕ} (hs : 1 ≤ s) :
     ∀ p ∈ familyBE4 s, projLineCount (familyBE4 s) p ≤ 30 * s + 31 := by
@@ -3403,9 +3403,9 @@ private lemma knightSdiff_nonCollinear_erase_diag {a e b m : ℕ} {D : Finset Pt
       Finset.mem_sdiff.mpr ⟨mem_knightSet_iff.mpr (Or.inr (Or.inr (Or.inr (Or.inr (Or.inr (Or.inr (Or.inr (Or.inr rfl)))))))), hD_inf⟩⟩,
     by unfold det; ring_nf; omega⟩
 
-/-- **Euclidean Headline for `Family C` Family C (`s ≥ 1`)**: `n = 60s + 61 = 12(5s+5) + 1`,
+/-- **Euclidean Headline for `R17-2-3` Family C (`s ≥ 1`)**: `n = 60s + 61 = 12(5s+5) + 1`,
 exact maximum spanned line count `30s + 28 = (n - 5) / 2` (deficit `5/2`, beating `G(n)` by `2`). -/
-theorem deficit52_familyC_euclidean {s : ℕ} (hs : 1 ≤ s) :
+theorem r17_2_3_familyC_euclidean {s : ℕ} (hs : 1 ≤ s) :
     ∃ P : Finset (ℝ × ℝ),
       P.card = 60 * s + 61 ∧
       NonCollinearR2 P ∧
@@ -3424,8 +3424,8 @@ theorem deficit52_familyC_euclidean {s : ℕ} (hs : 1 ≤ s) :
   exact exists_euclidean_set_eq (proper_subset (knightSet_proper ..) Finset.sdiff_subset)
     (familyC_card hs) hnc (familyC_lineCount_le hs) ⟨_, hp, le_of_eq (familyC_top_lineCount hs).symm⟩
 
-/-- **Euclidean Headline for `Family E4` Family E4 (`s ≥ 1`)**: `n = 60s + 65`, `t ≤ 30s + 31 = G(n) - 1`. -/
-theorem deficit52_familyBE4_euclidean {s : ℕ} (hs : 1 ≤ s) :
+/-- **Euclidean Headline for `R17-2-4` Family E4 (`s ≥ 1`)**: `n = 60s + 65`, `t ≤ 30s + 31 = G(n) - 1`. -/
+theorem r17_2_4_familyBE4_euclidean {s : ℕ} (hs : 1 ≤ s) :
     ∃ P : Finset (ℝ × ℝ),
       P.card = 60 * s + 65 ∧ NonCollinearR2 P ∧ ∀ a ∈ P, lineCountR2 P a ≤ 30 * s + 31 := by
   have hnc_e := knightSdiff_nonCollinear_erase_diag (a := 9 * s + 9) (e := 3 * s + 2)
@@ -3500,7 +3500,7 @@ theorem grunbaum_refuted_12_mod60 {s : ℕ} (hs : 2 ≤ s) :
      (∃ P : Finset (ℝ × ℝ), P.card = 60 * s + 48 ∧ NonCollinearR2 P ∧
         ∀ a ∈ P, lineCountR2 P a ≤ grunbaumVal P.card - 1)) := by
   have hs1 : 1 ≤ s := by omega
-  obtain ⟨hA53, hA52, hB69, hB68⟩ := deficit52_refutes_grunbaum s
+  obtain ⟨hA53, hA52, hB69, hB68⟩ := r17_2_1_refutes_grunbaum s
   have hdel_diag : ∀ {a e b m n B : ℕ} {D : Finset Pt},
       (∀ c : ℤ, (1, 0, c) ∉ D ∧ (0, 1, c) ∉ D) → (0, 0, 1) ∉ D → (1, 1, (b : ℤ)) ∉ D →
       (knightSet a e b m \ D).card = n + 1 →
@@ -3513,7 +3513,7 @@ theorem grunbaum_refuted_12_mod60 {s : ℕ} (hs : 2 ≤ s) :
     exact exists_euclidean_erase_one (proper_subset (knightSet_proper ..) Finset.sdiff_subset)
       hcard hq (knightSdiff_nonCollinear_erase_diag hax hinf) hbd
   refine ⟨⟨hA53, hA52, hB69, hB68, ?_, ?_⟩, ⟨?_, ?_, ?_, ?_, ?_, ?_⟩⟩
-  · obtain ⟨P, hPc, hPnc, hPbd, _⟩ := deficit52_familyC_euclidean hs1
+  · obtain ⟨P, hPc, hPnc, hPbd, _⟩ := r17_2_3_familyC_euclidean hs1
     refine ⟨P, hPc, hPnc, fun x hx => (hPbd x hx).trans ?_⟩
     rw [hPc]; unfold grunbaumVal; omega
   · obtain ⟨P, hPc, hPnc, hPbd⟩ := hdel_diag (D := knightD8 (5 * (s : ℤ) + 3))
@@ -3521,7 +3521,7 @@ theorem grunbaum_refuted_12_mod60 {s : ℕ} (hs : 2 ≤ s) :
       (familyC_card hs1) (familyC_lineCount_le hs1)
     refine ⟨P, hPc, hPnc, fun x hx => (hPbd x hx).trans ?_⟩
     rw [hPc]; unfold grunbaumVal; omega
-  · obtain ⟨P, hPc, hPnc, hPbd⟩ := deficit52_familyBE4_euclidean hs1
+  · obtain ⟨P, hPc, hPnc, hPbd⟩ := r17_2_4_familyBE4_euclidean hs1
     refine ⟨P, hPc, hPnc, fun x hx => (hPbd x hx).trans ?_⟩
     rw [hPc]; unfold grunbaumVal; omega
   · obtain ⟨P, hPc, hPnc, hPbd⟩ := hdel_diag (D := knightD4 (5 * (s : ℤ) + 3))
