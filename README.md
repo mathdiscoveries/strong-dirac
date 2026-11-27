@@ -43,23 +43,24 @@ $\mathbb{R}^2$ proving:
   $A(15,1)$ (used at $n = 15$, and with one point deleted at $n = 14$) and
   `o23Pts` is $A(25,5)$ with two points deleted ($n = 23$); both match the
   catalogue's $f$-, $t$- and $r$-vectors.
-- **Grünbaum (1972)**, *Arrangements and Spreads*, p. 25, and **Dirac (1951)**,
-  *Collinearity properties of sets of points*, *Quart. J. Math.* 2, 221–227:
-  earlier small counterexamples ($n = 9, 15, 19, 25, 31, 37$) and Dirac's
-  even-$n$ configurations with $t = n/2$, which the all-$n$ theorem meets again
-  at those sizes by its own constructions. Neither was read; both are credited
-  as `independently-proves` in `formalization.yaml`, marked `[to check]`, on
-  read passages that state their results: Akiyama et al. (2011, p. 322,
-  Table 1), Felsner (2004, p. 86) and Brass–Moser–Pach (2005, p. 313) for
-  Grünbaum's examples, and Grünbaum (2010, p. 3, Fig. 1(a)) for Dirac's.
+- **Dirac (1951)**, *Collinearity properties of sets of points*, *Quart. J.
+  Math.* 2, 221–227, read: pp. 226–227 give, for even $n$, a configuration with
+  every point on at most $n/2$ connecting lines, which the all-$n$ theorem meets
+  again for even $n \ge 8$ by its own constructions.
+- **Grünbaum (1972)**, *Arrangements and Spreads*, p. 25: earlier small
+  counterexamples ($n = 9, 15, 19, 25, 31, 37$), which the all-$n$ theorem meets
+  again at those sizes by its own constructions. Not read; credited as
+  `independently-proves` in `formalization.yaml`, marked `[to check]`, on read
+  passages that state its results: Akiyama et al. (2011, p. 322, Table 1),
+  Felsner (2004, p. 86) and Brass–Moser–Pach (2005, p. 313).
 - **Companion paper & search logs** (the paper states and proves every
   compared statement; this package formalizes them):
   - https://mathdiscoveries.org/results/few-lines-through-every-point
   Logged literature searches (arXiv, CORE 2026-11-20, Google Scholar 2026-11-22,
   and open surveys by Lund–Purdy–Smith 2014, Trok 2020, Dumitrescu 2022, and
   Florek 2025) did not find prior constructions for $n = 12k + 11$ or infinite
-  straight-line families with deficit $> 3/2$; Dirac (1951), Grünbaum (1972) and
-  most of the print monographs remain unread.
+  straight-line families with deficit $> 3/2$; Grünbaum (1972) and most of the
+  print monographs remain unread.
 
 Coverage by this package's Palomar comparison: none of the companion paper's 7 main results is compared in Lean in full, and 3 are compared in part, all over the reals: Theorem 1 (the bound $\lfloor n/2 \rfloor$ for every $n \ge 8$ and its odd case, not the exact maximum $6j + 5$ of the rational grid $S_K$); Theorem 2 (5 of its 12 classes modulo 60: the odd classes 53, 9 and 1 with exact maximum $(n - 5)/2$, and the even classes 52 and 8 with an upper bound only); Proposition 3 (family A, without its rationality claim). This package's Lean library proves Theorems 1 and 2 and Proposition 3 as stated, with their rational configurations and exact maxima (StrongDirac.ExactEqualities: thm_half, thm_knights, familyA_odd_rational_exact), and Lemmas 4, 5, 6 and 7, but compares only the parts above; Conjecture 8 is open and not counted.
 

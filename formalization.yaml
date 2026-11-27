@@ -17,8 +17,8 @@ project:
     2025) are published at mathdiscoveries.org/results/few-lines-through-every-point;
     neither the
     n = 12k + 11 construction nor infinite straight-line families with deficit > 3/2
-    were found in those logged searches; Dirac (1951), Grunbaum (1972) and
-    most of the print monographs remain unread [to check].
+    were found in those logged searches; Grunbaum (1972) and most of the
+    print monographs remain unread [to check].
     Coverage by this package's Palomar comparison: none of the companion
     paper's 7 main results is compared in Lean in full, and 3 are compared in
     part, all over the reals: Theorem 1 (the bound floor(n/2) for every
@@ -210,22 +210,30 @@ sources:
       - "G. A. Dirac"
     id: "https://doi.org/10.1093/qmath/2.1.221"
     type: paper
-    location: "Quarterly Journal of Mathematics 2 (1951), 221-227 [to check]"
+    location: "Quarterly Journal of Mathematics 2 (1951), 221-227, Conclusion (p. 226 and p. 227)"
     relationship: independently-proves
     note: >-
-      The paper itself was not read [to check]: the publisher's page refused
-      the request and no copy was available. The credit rests on a read
-      passage that states its examples. Grunbaum (2010, read in full), p. 3,
-      Figure 1(a): "Duals (in the projective plane) of the typical examples
-      constructed by Dirac [Di51] to show that t(n) = ceil(n/2). For even
-      n = 2k, the example A consists of two pencils of n/2 - 1 concurrent
-      lines ... together with that line and the line connecting the two
-      apexes of the pencils ... and in general t(A) = n/2." For even n >= 8
-      dirac_counterexample_all_ge_8 proves the existence upper bound
-      t <= n/2 again, by its own constructions; the credit is limited to that
-      bound. Dirac's conjecture t(X) >= ceil(n/2) (p. 226, as quoted by
-      Akiyama et al. 2011, p. 322) is a different statement and is not
-      proved here.
+      Read pp. 221-227 (archive.org item
+      sim_quarterly-journal-of-mathematics-oxford-series_1951-09_2_7, the
+      September 1951 issue; the OCR text checked against the page images of
+      pp. 226-227). With G(n) the least, over configurations of n
+      non-collinear points, of the largest number of connecting lines through
+      one point, and [x] "the smallest integer not exceeded by x", p. 226
+      conjectures G(n) >= [n/2] and continues on pp. 226-227: "it is easy to
+      see that this is best-possible, since G(n) = [n/2] for the following
+      configurations: if n is even, n/2 - 1 of the points lie on one line,
+      n/2 - 1 of the remaining points lie on a second line, and these lines
+      meet in the (n - 1)th point; the two ranges are in perspective from the
+      nth point. If n is odd, (n - 1)/2 of the points lie on one line,
+      (n - 1)/2 of the others lie on a second line; these two ranges are in
+      perspective with the nth point." The paper states these values without
+      a written verification. For even n this is a non-collinear set of n
+      points with every point on at most n/2 connecting lines, the existence
+      bound that dirac_counterexample_all_ge_8 proves again for even n >= 8 by
+      its own constructions; the credit is limited to that even bound. The
+      odd configurations give (n + 1)/2, weaker than the package's odd bound
+      (n - 1)/2, and are not credited. The conjecture itself is a different
+      statement and is not proved here.
   - title: "On Dirac and Motzkin problem in discrete geometry"
     authors:
       - "Jan Florek"
@@ -332,7 +340,8 @@ sources:
       straight-line family with deficit exceeding 3/2; no exhaustive priority
       claim is made. Akiyama et al. (2011) was read in full; of Felsner
       (2004) only p. 86 and of Brass-Moser-Pach (2005) only p. 313 were
-      read; Grunbaum (1972) and Dirac (1951) remain unread [to check]. AI research agents built
+      read, and Dirac (1951) was read; Grunbaum (1972) remains unread
+      [to check]. AI research agents built
       and directed by Tyler B. Hughes generated and checked this work. No human
       mathematician has yet refereed the proof.
 
