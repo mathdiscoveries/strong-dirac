@@ -7,10 +7,10 @@ $\mathbb{R}^2$ proving:
 
 1. Every $n \ge 8$ admits a non-collinear $n$-point set with every point on at
    most $\lfloor n/2 \rfloor$ connecting lines (self-contained across all 12
-   residue classes modulo 12, adapting Stefan Felsner's infinite $6K + 7$ family
-   (Felsner, *Geometric Graphs and Arrangements*, Vieweg 2004, p. 86, as
-   discussed by Grünbaum 2010 and reported in Brass, Moser, and Pach,
-   *Research Problems in Discrete Geometry*, Springer 2005, p. 313) and adding an
+   residue classes modulo 12, proving again the bound of Stefan Felsner's
+   infinite $6K + 7$ family (Felsner, *Geometric Graphs and Arrangements*,
+   Vieweg 2004, p. 86) with coordinates reconstructed from the accounts of
+   Grünbaum 2010, pp. 4–5, and Lund–Purdy–Smith 2014, §2, and adding an
    explicit 8-deletion
    construction for $n = 12k + 11$, $k \ge 2$).
 2. Three infinite straight-line knight-lattice families with deficit $5/2$ below
@@ -26,15 +26,19 @@ $\mathbb{R}^2$ proving:
   whose Incident-Line-Numbers are at most $n/2$"*, *Graphs and Combinatorics*
   27(3) (2011), 321–326 (`doi:10.1007/s00373-011-1023-4`), covered 11 of 12
   residue classes modulo 12 (leaving $n = 12k + 11$, $k \ge 4$, open according
-  to subsequent open surveys); pages 323–326 were paywalled and unread, and this
-  formalization proves all 12 classes self-contained, independently of the
-  cases they cover.
-- **Felsner (2004)**, *Geometric Graphs and Arrangements*, p. 86: the source of
-  the infinite $6K + 7$ family adapted here (`felsnerSet` and its 1-, 4- and
-  8-deletions). The package gives explicit coordinates and Lean proofs for its
-  1-, 4- and 8-deletions; Grünbaum (2010, p. 8) already lists single deletions
-  of Felsner examples at $n = 42$ and $54$. Page 86 was not read; the
-  attribution follows Grünbaum (2010) and Lund–Purdy–Smith (2014), both read.
+  to subsequent open surveys); pages 323–326 were paywalled and unread, so the
+  journal paper is listed as `background` `[to check]` and the authors' results
+  are credited on their 2009 abstract, which was read. This formalization proves
+  all 12 classes self-contained, independently of the cases they cover.
+- **Felsner (2004)**, *Geometric Graphs and Arrangements*, p. 86: published the
+  infinite $6K + 7$ family (read in the author-hosted copy); `felsner_mod12_euclidean`
+  independently proves its bound of at most $6k + 2$ lines at $n = 12k + 7$,
+  $k \ge 1$. `felsnerSet` was
+  reconstructed from Grünbaum (2010, pp. 4–5) and Lund–Purdy–Smith (2014, §2),
+  both read; the package gives explicit coordinates and Lean proofs for it and
+  for its 1-, 4- and 8-deletions, and Grünbaum (2010, p. 8) already lists single
+  deletions of Felsner examples at $n = 42$ and $54$. Page 86 states the family
+  and draws its 31-line member but gives no general construction.
 - **Grünbaum (2009)**, *A catalogue of simplicial arrangements in the real
   projective plane*, *Ars Math. Contemp.* 2, 1–25: `h3Pts` is the dual of
   $A(15,1)$ (used at $n = 15$, and with one point deleted at $n = 14$) and
@@ -44,10 +48,10 @@ $\mathbb{R}^2$ proving:
   *Collinearity properties of sets of points*, *Quart. J. Math.* 2, 221–227:
   earlier small counterexamples ($n = 9, 15, 19, 25, 31, 37$) and Dirac's
   even-$n$ configurations with $t = n/2$, which the all-$n$ theorem meets again
-  at those sizes by its own constructions. Neither was read; both are credited
-  as `independently-proves` in `formalization.yaml`, marked `[to check]`, on
-  the strength of the passages quoted there from Akiyama et al. (2009) and
-  Grünbaum (2010).
+  at those sizes by its own constructions. Neither was read; both are listed
+  as `background` in `formalization.yaml`, marked `[to check]`, with the
+  passages from Akiyama et al. (2009), Grünbaum (2010) and Felsner (2004)
+  that report them.
 - **Companion paper & search logs** (the paper states and proves every
   compared statement; this package formalizes them):
   - https://mathdiscoveries.org/results/few-lines-through-every-point

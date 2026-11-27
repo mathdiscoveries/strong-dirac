@@ -7,7 +7,7 @@ project:
     Unconditional Lean 4 + Mathlib formalization in the Euclidean plane R^2 proving:
     (1) every n >= 8 admits a non-collinear n-point set with every point incident to
     at most floor(n/2) connecting lines (self-contained across all 12 residue classes
-    modulo 12, adapting Felsner's family for several classes and adding an explicit
+    modulo 12, reconstructing Felsner's family for several classes and adding an explicit
     8-deletion construction for n = 12k + 11, k >= 2); (2) three infinite straight-line
     knight-lattice families with deficit 5/2 below n/2 (n = 60s + 53 and n = 60s + 69
     for all s >= 0, and n = 60s + 61 for all s >= 1); and (3) a refutation of
@@ -69,55 +69,55 @@ sources:
       - "Gisaku Nakamura"
     id: "https://doi.org/10.1007/s00373-011-1023-4"
     type: paper
-    location: "Graphs and Combinatorics 27(3) (2011), 321-326"
-    relationship: independently-proves
+    location: "Graphs and Combinatorics 27(3) (2011), 321-326 [to check]"
+    relationship: background
     note: >-
-      The journal version [to check]. Its pages 323-326 were not read: on
-      2026-11-27 link.springer.com refused this agent by robots.txt and
-      OpenAlex listed no open copy. The credit rests on secondary passages
-      that were read. Lund-Purdy-Smith (2014, Section 2, p. 2): "In [1],
+      The journal version, not read [to check]: pages 323-326 were not
+      read (on 2026-11-27 link.springer.com refused this agent by robots.txt
+      and OpenAlex listed no open copy), so it is listed as background; the
+      authors' results are credited on the 2009 abstract above, which was
+      read. What is reported about it, and by whom: Lund-Purdy-Smith (2014, Section 2, p. 2): "In [1],
       Akiyama et al. show that the floor(n/2) bound (i.e., the Strong Dirac
       conjecture with c = 0) can be attained for all sufficiently large n
       except those of the form 12k + 11 (which they left as an open
       problem)". Grunbaum (2010, p. 8, table) lists examples X(11), X(39),
       X(49) and X(51) from this paper, and X(49) with two lines deleted at
       n = 47 (t = 22). That the open progression starts at k = 4, so that
-      the paper also covers n = 23 and 35, rests on an earlier entry in this
-      file recording that the Springer abstract and the pp. 321-322 preview
-      were read, and on the editorial audit seats' report; it was not
-      re-read here. dirac_counterexample_all_ge_8 proves the half bound at
-      all these sizes again, by its own constructions.
+      the paper also covers n = 23 and 35, is reported by the editorial
+      audit and prior-work census seats [to check].
+      dirac_counterexample_all_ge_8 proves the half bound at all these sizes
+      again, by its own constructions.
   - title: "Geometric Graphs and Arrangements: Some Chapters from Combinatorial Geometry"
     authors:
       - "Stefan Felsner"
     id: "https://doi.org/10.1007/978-3-322-80303-0"
     type: book
-    location: "Advanced Lectures in Mathematics, Vieweg (2004), p. 86"
-    relationship: adapts
+    location: "Advanced Lectures in Mathematics, Vieweg (2004), Section 5 notes, p. 86, Figure 5.14"
+    relationship: independently-proves
     note: >-
-      The infinite straight-line family is Stefan Felsner's: 6K + 7 points
-      (dually, lines) with every point on at most 3K + 2 connecting lines
-      for even K, deficit 3/2. StrongDirac/TightnessAndMod12.lean formalizes
-      its even-parameter members as felsnerSet (n = 12k + 7, the Euclidean
-      Felsner theorem that dirac_counterexample_all_ge_8 uses for that class)
-      with a 1-deletion (12k + 6), and adapts it by a 4-deletion
-      (felsnerDel4, 12k + 3 and 12k + 2) and, in StrongDirac/R15_2_1.lean,
-      an 8-deletion (12k + 11, k >= 2). Grunbaum (2010, p. 8) already lists
-      one-line deletions of Felsner examples at n = 42 and 54; the 4- and
-      8-deletions are not listed in the sources read. The package gives
-      explicit coordinates and Lean proofs for all of them. Page 86
-      itself was not read [to check]: the book is in print and no open copy
-      was found. The attribution and parameters come from two sources that
-      were read. Grunbaum (2010, read in full), p. 4: "The main contribution
-      of Felsner [Fe04, p. 86] is ... a family of [aggregates of] lines
-      showing that t(n) <= ceil(n/2) - 2 for all n of the form n = 12k + 7 ... The
-      construction is not made explicit, but is illustrated by the example
-      for k = 2 (that is, n = 31)". Lund-Purdy-Smith (2014, Section 2 read),
-      p. 2: "This infinite family of counterexamples is due to Felsner and
-      contains 6k + 7 points with none incident to more than 3k + 2 spanned
-      lines when k is even", with the dual of the n = 31 member (Figure 1)
-      and one wedge of its dihedral construction (Figure 2). The coordinates in felsnerSet are the package's own
-      presentation of the family, not taken from p. 86.
+      Read p. 86 in the author-hosted copy of the book
+      (page.math.tu-berlin.de/~felsner/Buch/gga-book.pdf). In the notes to
+      Chapter 5, with r*(n) the least number such that every nontrivial
+      arrangement of n lines has a line with at least r*(n) vertices: "There
+      is a family of arrangements showing that r*(n) <= ceil(n/2) - 2 for
+      all n of the form n = 12k + 7, the member of this family with k = 2 is
+      shown in Figure 5.14" ("An arrangement of 31 lines (including the line
+      at infinity) and at most 14 vertices on each line"). The page gives no
+      general construction. felsner_mod12_euclidean (StrongDirac/
+      TightnessAndMod12.lean) independently proves the dual bound for
+      k >= 1: a non-collinear set of n = 12k + 7 points with every point on
+      at most 6k + 2 connecting lines (felsnerSet), which
+      dirac_counterexample_all_ge_8 uses for that class. The coordinates of
+      felsnerSet were reconstructed from the read accounts of Grunbaum
+      (2010, pp. 4-5; credited on the Grunbaum 2010 entry below) and
+      Lund-Purdy-Smith (2014, Section 2, p. 2: "This infinite family of
+      counterexamples is due to Felsner and contains 6k + 7 points with none
+      incident to more than 3k + 2 spanned lines when k is even"), not from
+      p. 86. The 1-deletion (12k + 6), the 4-deletion (felsnerDel4, 12k + 3
+      and 12k + 2) and the 8-deletion (StrongDirac/R15_2_1.lean, 12k + 11,
+      k >= 2) are the package's own; Grunbaum (2010, p. 8) already lists
+      one-line deletions of Felsner examples at n = 42 and 54, and the 4- and
+      8-deletions are not listed in the sources read.
   - title: "Research Problems in Discrete Geometry"
     authors:
       - "Peter Brass"
@@ -132,8 +132,8 @@ sources:
       personal communication (so Grunbaum 2010, p. 4, and the 2009 abstract
       of Akiyama et al., p. 1, both read in full); the family is also named
       and drawn in Lund-Purdy-Smith 2014, Section 2. The printed page was
-      not read [to check]. The adaptation of Felsner's family is recorded on
-      the Felsner (2004) entry above.
+      not read [to check]. The credit for Felsner's bound is recorded on the
+      Felsner (2004) entry above.
   - title: "Dirac's conjecture concerning high-incidence elements in aggregates"
     authors:
       - "Branko Grunbaum"
@@ -145,9 +145,12 @@ sources:
       used here are his conjectured bound G(n) = 2 * floor(n/4) for all
       sufficiently large n, which refutes_grunbaum_2010 refutes by at least 2
       across four infinite congruence classes modulo 60, and his table of the
-      smallest known t(n) (p. 8). He discusses Felsner's even-parameter
-      family (pp. 4-5; credited on the Felsner 2004 entry) and gives his own
-      interpretation of it for n = 19 (Figure 3). His table draws its
+      smallest known t(n) (p. 8). His account of Felsner's even-parameter
+      family, pp. 4-5, with his interpretation of it for n = 19 (Figure 3),
+      is the read account from which felsnerSet and its deletions were
+      reconstructed; Lund, Purdy and Smith (2014), Section 2, give the
+      corroborating account and figures (the dual of the n = 31 member,
+      Figure 1, and one wedge of its dihedral construction, Figure 2). His table draws its
       arrangements from the 2009 catalogue (next entry); for n = 23 it lists
       A(24,2) with one line deleted, whereas this package's n = 23 witness
       is A(25,5) with two lines deleted (o23Pts), a different parent; for
@@ -183,11 +186,12 @@ sources:
       - "Branko Grunbaum"
     id: "https://doi.org/10.1090/cbms/010"
     type: book
-    location: "CBMS Regional Conference Series in Mathematics 10, American Mathematical Society (1972), p. 25"
-    relationship: independently-proves
+    location: "CBMS Regional Conference Series in Mathematics 10, American Mathematical Society (1972), p. 25 [to check]"
+    relationship: background
     note: >-
       Not read [to check], p. 25 included: the book is in print and no open
-      copy was found. The credit rests on passages that were read. The 2009
+      copy was found, so it is listed as background. What is reported about
+      it, and by whom, in passages that were read: The 2009
       abstract of Akiyama et al. (read in full), p. 1: "Some counterexamples
       were shown for a few small values of n (9, 15, 19, 25, 31, 37) by
       Grunbaum ([3], p. 25)", where [3] is this book. Grunbaum (2010, read
@@ -195,29 +199,66 @@ sources:
       [Gr72], where several examples that contradict the "Dirac-Motzkin"
       conjecture were given." OEIS A058211 lists the same six sizes. At
       these odd sizes dirac_counterexample_all_ge_8 (and its odd form)
-      independently proves the same existence bound t <= floor(n/2) =
-      (n - 1)/2, by its own constructions; the credit is limited to that
-      bound at those sizes.
+      proves the existence bound t <= floor(n/2) = (n - 1)/2 again, by its
+      own constructions.
   - title: "Collinearity properties of sets of points"
     authors:
       - "G. A. Dirac"
     id: "https://doi.org/10.1093/qmath/2.1.221"
     type: paper
-    location: "Quarterly Journal of Mathematics 2 (1951), 221-227"
-    relationship: independently-proves
+    location: "Quarterly Journal of Mathematics 2 (1951), 221-227 [to check]"
+    relationship: background
     note: >-
       Not read [to check], pp. 221-227: the publisher's page refused the
-      request and no open copy was found. The credit rests on Grunbaum
-      (2010, read in full), p. 3, Figure 1(a): "Duals (in the projective
+      request and no open copy was found, so it is listed as background.
+      Grunbaum (2010, read in full) reports it, p. 3, Figure 1(a): "Duals (in the projective
       plane) of the typical examples constructed by Dirac [Di51] to show
       that t(n) = ceil(n/2). For even n = 2k, the example A consists of two
       pencils of n/2 - 1 concurrent lines ... together with that line and
       the line connecting the two apexes of the pencils ... and in general
-      t(A) = n/2." For even n >= 8 dirac_counterexample_all_ge_8
-      independently proves the existence upper bound t <= n/2 by its own
-      constructions; the credit is limited to that bound. Dirac's proposed
+      t(A) = n/2." For even n >= 8 dirac_counterexample_all_ge_8 proves
+      the existence upper bound t <= n/2 again, by its own constructions. Dirac's proposed
       universal lower bound is a different statement and is not proved
       here.
+  - title: "On Dirac and Motzkin problem in discrete geometry"
+    authors:
+      - "Jan Florek"
+    id: "https://doi.org/10.1007/s00373-025-02913-w"
+    type: paper
+    location: "Graphs and Combinatorics 41 (2025), Paper 54; arXiv:2501.18406"
+    relationship: background
+    note: >-
+      Read (arXiv v1, Section 1). Restates the counterexamples of Grunbaum,
+      Felsner and Akiyama et al., draws the latter's n = 4k + 1 sets at
+      n = 17 (Figures 1-2) and points to Florek's 2011 paper ("see also
+      Florek [5]"); it proves a different, positive statement. That earlier
+      paper, J. Florek, "On some extremal problem in discrete geometry",
+      Mathematical Economics 7(14) (2011), 65-70, was read in full (Lower
+      Silesian Digital Library copy) and is credited here because it has no
+      DOI, arXiv or index record the bibliography check can resolve. Its
+      Theorem 2.2, p. 68, for X_n of "n = 4k, k >= 2, points distributed on
+      the lines p, q, r", states "Any point of X_n u {O} belongs to at most
+      n/2 lines spanned by X_n u {O}": a non-collinear set of 4k + 1 points
+      with every point on at most 2k lines. dirac_counterexample_all_odd_ge_9
+      and dirac_counterexample_all_ge_8 prove that bound again at the sizes
+      4k + 1, k >= 2, by their own constructions.
+  - title: "A sporadic simplicial arrangement of 51 lines"
+    authors:
+      - "Tomas S. R. Silva"
+    id: "https://arxiv.org/abs/2610.28874"
+    type: paper
+    location: "arXiv:2610.28874v2 (2026), Theorem 1.1, p. 2, and Section 6, p. 6"
+    relationship: background
+    note: >-
+      Read (arXiv v2). Constructs a simplicial arrangement A51 of 51 real
+      lines; Section 6, p. 6, reports that the verifier "checks that each of
+      the 21 original lines contains 20 vertices and each of the 30 added
+      lines contains 22". The dual is a non-collinear set of 51 points with
+      every point on at most 22 connecting lines, a single size with
+      deficit 7/2 (below the bound 25 that dirac_counterexample_all_ge_8
+      proves at n = 51, and below Grunbaum's 2 * floor(51/4) = 24). The
+      paper does not discuss Dirac's problem; n = 51 is outside the four
+      residue classes of refutes_grunbaum_2010.
   - title: "A pseudoline counterexample to the strong Dirac conjecture"
     authors:
       - "Ben Lund"
@@ -269,14 +310,17 @@ sources:
       formalization presents no result that the paper does not. The 11
       residue classes of Akiyama, Ito, Kobayashi and Nakamura are printed
       prior work, listed above; the proof of them here is a second proof.
-      Felsner's family (Felsner 2004, entry above) and two arrangements of
-      Grunbaum's 2009 catalogue are adapted. Logged prior-work searches (arXiv, CORE on 2026-11-20, Google
+      Felsner's bound (Felsner 2004, p. 86, entry above) is proved again
+      with coordinates reconstructed from Grunbaum's (2010) and
+      Lund-Purdy-Smith's (2014) accounts of his family, and two arrangements of Grunbaum's 2009 catalogue are
+      adapted. Logged prior-work searches (arXiv, CORE on 2026-11-20, Google
       Scholar on 2026-11-22, and the 2014-2025 surveys listed above) found
       neither the punctured grid for n = 12k + 11 nor an infinite
       straight-line family with deficit exceeding 3/2; no exhaustive priority
-      claim is made, and the print monographs (Felsner 2004, Grunbaum 1972,
+      claim is made, and the print monographs (Grunbaum 1972,
       Brass-Moser-Pach 2005), Dirac (1951) and the paywalled pages 323-326 of
-      Akiyama et al. (2011) remain unread [to check]. AI research agents built
+      Akiyama et al. (2011) remain unread [to check]; of Felsner (2004) only
+      p. 86 was read. AI research agents built
       and directed by Tyler B. Hughes generated and checked this work. No human
       mathematician has yet refereed the proof.
 
@@ -334,7 +378,7 @@ alignment:
       lean: "StrongDiracChallenge.dirac_counterexample_all_ge_8"
       module: "Challenge"
       status: proved
-      note: "Self-contained across all 12 residue classes modulo 12 (adapting Felsner's family and adding an 8-deletion for n = 12k + 11)."
+      note: "Self-contained across all 12 residue classes modulo 12 (reconstructing Felsner's family and adding an 8-deletion for n = 12k + 11)."
     - source: "At most (n - 1)/2 lines through each point for every odd n >= 9"
       lean: "StrongDiracChallenge.dirac_counterexample_all_odd_ge_9"
       module: "Challenge"
