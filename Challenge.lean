@@ -41,10 +41,10 @@ def NonCollinearR2 (P : Finset (ℝ × ℝ)) : Prop :=
 /-- The Euclidean line through `a` and `b` in `ℝ²`. -/
 def lineR2 (a b : ℝ × ℝ) : Set (ℝ × ℝ) := {r : ℝ × ℝ | CollinearR2 a b r}
 
+open Classical in
 /-- The finite set of distinct connecting lines through `a` spanned by `P`. -/
-noncomputable def spannedLinesR2 (P : Finset (ℝ × ℝ)) (a : ℝ × ℝ) : Finset (Set (ℝ × ℝ)) := by
-  classical
-  exact (P.erase a).image (lineR2 a)
+noncomputable def spannedLinesR2 (P : Finset (ℝ × ℝ)) (a : ℝ × ℝ) : Finset (Set (ℝ × ℝ)) :=
+  (P.erase a).image (lineR2 a)
 
 /-- The exact number of connecting lines through `a` spanned by `P`. -/
 noncomputable def lineCountR2 (P : Finset (ℝ × ℝ)) (a : ℝ × ℝ) : ℕ :=

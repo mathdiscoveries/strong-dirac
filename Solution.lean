@@ -25,9 +25,9 @@ def NonCollinearR2 (P : Finset (ℝ × ℝ)) : Prop :=
 
 def lineR2 (a b : ℝ × ℝ) : Set (ℝ × ℝ) := {r : ℝ × ℝ | CollinearR2 a b r}
 
-noncomputable def spannedLinesR2 (P : Finset (ℝ × ℝ)) (a : ℝ × ℝ) : Finset (Set (ℝ × ℝ)) := by
-  classical
-  exact (P.erase a).image (lineR2 a)
+open Classical in
+noncomputable def spannedLinesR2 (P : Finset (ℝ × ℝ)) (a : ℝ × ℝ) : Finset (Set (ℝ × ℝ)) :=
+  (P.erase a).image (lineR2 a)
 
 noncomputable def lineCountR2 (P : Finset (ℝ × ℝ)) (a : ℝ × ℝ) : ℕ :=
   (spannedLinesR2 P a).card
