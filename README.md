@@ -24,12 +24,11 @@ $\mathbb{R}^2$ proving:
 
 - **Akiyama, Ito, Kobayashi, and Nakamura (2011)**, *"Arrangements of $n$ Points
   whose Incident-Line-Numbers are at most $n/2$"*, *Graphs and Combinatorics*
-  27(3) (2011), 321–326 (`doi:10.1007/s00373-011-1023-4`), covered 11 of 12
-  residue classes modulo 12 (leaving $n = 12k + 11$, $k \ge 4$, open according
-  to subsequent open surveys); pages 323–326 were paywalled and unread, so the
-  journal paper is listed as `background` `[to check]` and the authors' results
-  are credited on their 2009 abstract, which was read. This formalization proves
-  all 12 classes self-contained, independently of the cases they cover.
+  27(3) (2011), 321–326 (`doi:10.1007/s00373-011-1023-4`), read in full:
+  Theorem 1.2 (p. 323) gives the $\lfloor n/2 \rfloor$ bound for every $n \ge 8$
+  except possibly $n = 12k + 11$, $k \ge 4$, which they leave open (p. 325).
+  This formalization proves all 12 classes self-contained, independently of the
+  cases they cover.
 - **Felsner (2004)**, *Geometric Graphs and Arrangements*, p. 86: published the
   infinite $6K + 7$ family (read in the author-hosted copy); `felsner_mod12_euclidean`
   independently proves its bound of at most $6k + 2$ lines at $n = 12k + 7$,
@@ -48,18 +47,19 @@ $\mathbb{R}^2$ proving:
   *Collinearity properties of sets of points*, *Quart. J. Math.* 2, 221–227:
   earlier small counterexamples ($n = 9, 15, 19, 25, 31, 37$) and Dirac's
   even-$n$ configurations with $t = n/2$, which the all-$n$ theorem meets again
-  at those sizes by its own constructions. Neither was read; both are listed
-  as `background` in `formalization.yaml`, marked `[to check]`, with the
-  passages from Akiyama et al. (2009), Grünbaum (2010) and Felsner (2004)
-  that report them.
+  at those sizes by its own constructions. Neither was read; both are credited
+  as `independently-proves` in `formalization.yaml`, marked `[to check]`, on
+  read passages that state their results: Akiyama et al. (2011, p. 322,
+  Table 1), Felsner (2004, p. 86) and Brass–Moser–Pach (2005, p. 313) for
+  Grünbaum's examples, and Grünbaum (2010, p. 3, Fig. 1(a)) for Dirac's.
 - **Companion paper & search logs** (the paper states and proves every
   compared statement; this package formalizes them):
   - https://mathdiscoveries.org/results/few-lines-through-every-point
   Logged literature searches (arXiv, CORE 2026-11-20, Google Scholar 2026-11-22,
   and open surveys by Lund–Purdy–Smith 2014, Trok 2020, Dumitrescu 2022, and
   Florek 2025) did not find prior constructions for $n = 12k + 11$ or infinite
-  straight-line families with deficit $> 3/2$; paywalled pages of Akiyama et al.
-  (2011) and print monographs remain unread/unsearched.
+  straight-line families with deficit $> 3/2$; Dirac (1951), Grünbaum (1972) and
+  most of the print monographs remain unread.
 
 Coverage by this package's Palomar comparison: none of the companion paper's 7 main results is compared in Lean in full, and 3 are compared in part, all over the reals: Theorem 1 (the bound $\lfloor n/2 \rfloor$ for every $n \ge 8$ and its odd case, not the exact maximum $6j + 5$ of the rational grid $S_K$); Theorem 2 (5 of its 12 classes modulo 60: the odd classes 53, 9 and 1 with exact maximum $(n - 5)/2$, and the even classes 52 and 8 with an upper bound only); Proposition 3 (family A, without its rationality claim). This package's Lean library proves Theorems 1 and 2 and Proposition 3 as stated, with their rational configurations and exact maxima (StrongDirac.ExactEqualities: thm_half, thm_knights, familyA_odd_rational_exact), and Lemmas 4, 5, 6 and 7, but compares only the parts above; Conjecture 8 is open and not counted.
 
