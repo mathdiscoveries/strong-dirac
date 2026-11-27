@@ -234,6 +234,21 @@ sources:
       odd configurations give (n + 1)/2, weaker than the package's odd bound
       (n - 1)/2, and are not credited. The conjecture itself is a different
       statement and is not proved here.
+  - title: "On some extremal problem in discrete geometry"
+    authors:
+      - "Jan Florek"
+    id: "https://www.dbc.wroc.pl/publication/21184"
+    type: paper
+    location: "Mathematical Economics 7(14) (2011), 65-70"
+    relationship: independently-proves
+    note: >-
+      Read in full (Lower Silesian Digital Library copy). Theorem 2.2, p. 68,
+      for X_n of "n = 4k, k >= 2, points distributed on the lines p, q, r",
+      states "Any point of X_n u {O} belongs to at most n/2 lines spanned by
+      X_n u {O}": a non-collinear set of 4k + 1 points with every point on at
+      most 2k connecting lines. dirac_counterexample_all_odd_ge_9 and
+      dirac_counterexample_all_ge_8 prove that bound again at the sizes
+      4k + 1, k >= 2, by their own constructions.
   - title: "On Dirac and Motzkin problem in discrete geometry"
     authors:
       - "Jan Florek"
@@ -245,17 +260,8 @@ sources:
       Read (arXiv v1, Section 1). Restates the counterexamples of Grunbaum,
       Felsner and Akiyama et al., draws the latter's n = 4k + 1 sets at
       n = 17 (Figures 1-2) and points to Florek's 2011 paper ("see also
-      Florek [5]"); it proves a different, positive statement. That earlier
-      paper, J. Florek, "On some extremal problem in discrete geometry",
-      Mathematical Economics 7(14) (2011), 65-70, was read in full (Lower
-      Silesian Digital Library copy) and is credited here because it has no
-      DOI, arXiv or index record the bibliography check can resolve. Its
-      Theorem 2.2, p. 68, for X_n of "n = 4k, k >= 2, points distributed on
-      the lines p, q, r", states "Any point of X_n u {O} belongs to at most
-      n/2 lines spanned by X_n u {O}": a non-collinear set of 4k + 1 points
-      with every point on at most 2k lines. dirac_counterexample_all_odd_ge_9
-      and dirac_counterexample_all_ge_8 prove that bound again at the sizes
-      4k + 1, k >= 2, by their own constructions.
+      Florek [5]"), credited in its own entry above; it proves a different,
+      positive statement.
   - title: "A sporadic simplicial arrangement of 51 lines"
     authors:
       - "Tomas S. R. Silva"

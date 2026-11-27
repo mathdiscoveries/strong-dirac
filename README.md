@@ -47,6 +47,10 @@ $\mathbb{R}^2$ proving:
   Math.* 2, 221–227, read: pp. 226–227 give, for even $n$, a configuration with
   every point on at most $n/2$ connecting lines, which the all-$n$ theorem meets
   again for even $n \ge 8$ by its own constructions.
+- **Florek (2011)**, *On some extremal problem in discrete geometry*,
+  *Mathematical Economics* 7(14), 65–70, read: Theorem 2.2 (p. 68) gives
+  $4k + 1$ points ($k \ge 2$) with every point on at most $2k$ lines, met again
+  at those sizes.
 - **Grünbaum (1972)**, *Arrangements and Spreads*, p. 25: earlier small
   counterexamples ($n = 9, 15, 19, 25, 31, 37$), which the all-$n$ theorem meets
   again at those sizes by its own constructions. Not read; credited as
