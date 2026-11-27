@@ -2,7 +2,7 @@
 version: "v0.4"
 
 project:
-  name: "Strong Dirac Counterexamples for All n >= 8 and Infinite Refutation of Grunbaum's 2010 Conjecture"
+  name: "Planar Point Sets with at Most floor(n/2) Lines Through Every Point for All n >= 8 and an Infinite Refutation of Grunbaum's 2010 Conjecture"
   description: >-
     Unconditional Lean 4 + Mathlib formalization in the Euclidean plane R^2 proving:
     (1) every n >= 8 admits a non-collinear n-point set with every point incident to
@@ -51,17 +51,22 @@ sources:
     id: "https://doi.org/10.1007/s00373-011-1023-4"
     type: paper
     location: "Graphs and Combinatorics 27(3) (2011), 321-326"
-    relationship: independently-proves
+    relationship: background
     note: >-
-      Constructs counterexamples with at most floor(n/2) connecting lines per
-      point for 11 of 12 residue classes modulo 12 (plus n = 35 and n = 47),
-      leaving n = 12k + 11 (k >= 4) open, as its abstract and the secondary
-      surveys (Lund-Purdy-Smith 2014, Trok 2020, Dumitrescu 2022, Florek 2025)
-      record; the authors' two-page conference paper (Proc. JCCGG 2009) was
-      read in full. Pages 323-326 of the journal article were paywalled and
-      are unread [to check]; this
-      formalization independently proves all 12 residue classes modulo 12
-      (for every n >= 8) self-contained inside dirac_counterexample_all_ge_8.
+      Poses the problem of a non-collinear n-point set with at most floor(n/2)
+      connecting lines through every point for every n >= 8. The authors'
+      two-page conference version (Proc. JCCGG 2009,
+      https://www.jaist.ac.jp/~uehara/JCCGG09/submissions/jccgg2009_submission_56.pdf),
+      read in full, reports constructions for even n >= 8, n = 4k + 9,
+      n = 12k + 15 and n = 11, with Felsner's arrangement for n = 12k + 19,
+      and leaves n = 12k + 23 open. This journal version, per its abstract and
+      the secondary surveys (Lund-Purdy-Smith 2014, Trok 2020, Dumitrescu
+      2024, Florek 2025), covers 11 of 12 residue classes modulo 12 (plus
+      n = 35 and n = 47), leaving n = 12k + 11 (k >= 4) open; its Springer
+      abstract and pp. 321-322 preview were read, and pp. 323-326 are
+      paywalled and unread [to check]. dirac_counterexample_all_ge_8 proves
+      every n >= 8 again, self-contained, including these cases; the entry is
+      background because the journal proofs were not read in full.
   - title: "Research Problems in Discrete Geometry"
     authors:
       - "Peter Brass"
@@ -121,12 +126,12 @@ sources:
       Recent survey/paper consulted in the prior-work check noting that all
       known infinite straight-line counterexample families satisfied deficit at
       most 3/2 and citing the open n = 12k + 11 case of Akiyama et al. (2011).
-  - title: "On the strong Dirac conjecture"
+  - title: "The Dirac-Goodman-Pollack Conjecture"
     authors:
       - "Adrian Dumitrescu"
     id: "https://arxiv.org/abs/2204.06101"
     type: paper
-    location: "arXiv:2204.06101 (2022)"
+    location: "Discrete & Computational Geometry 72(2) (2024), 728-742; arXiv:2204.06101"
     relationship: background
     note: >-
       Recent literature consulted in the prior-work check (alongside Florek,
@@ -179,8 +184,8 @@ automation:
       framework: "AI research agent pipeline built and directed by Tyler B. Hughes"
       tool_setup: >-
         Autonomous builder, adversarial falsifier, and reviewer agents
-        discovered the constructions and formalized the 198 declarations in
-        Lean 4 + Mathlib.
+        discovered the constructions and formalized them in Lean 4 + Mathlib. The library contains 231 audited
+        declarations; the Palomar comparison selects six theorems.
       cost:
         wall_time: "not tracked"
         spend_usd: "not tracked"
@@ -208,12 +213,12 @@ review:
 alignment:
   namespace: "StrongDiracChallenge"
   statements:
-    - source: "Strong Dirac counterexamples for every n >= 8"
+    - source: "At most floor(n/2) lines through each point for every n >= 8"
       lean: "StrongDiracChallenge.dirac_counterexample_all_ge_8"
       module: "Challenge"
       status: proved
       note: "Self-contained across all 12 residue classes modulo 12 (adapting Felsner's family and adding an 8-deletion for n = 12k + 11)."
-    - source: "Strong Dirac counterexamples for every odd n >= 9"
+    - source: "At most (n - 1)/2 lines through each point for every odd n >= 9"
       lean: "StrongDiracChallenge.dirac_counterexample_all_odd_ge_9"
       module: "Challenge"
       status: proved
