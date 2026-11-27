@@ -42,6 +42,25 @@ classification:
   msc2020: ["52C10", "52C30"]
 
 sources:
+  - title: "Arrangements of n points whose incident-line-numbers are at most n/2"
+    authors:
+      - "Jin Akiyama"
+      - "Hiro Ito"
+      - "Midori Kobayashi"
+      - "Gisaku Nakamura"
+    id: "https://www.jaist.ac.jp/~uehara/JCCGG09/submissions/jccgg2009_submission_56.pdf"
+    type: other
+    location: "Two-page abstract, Japan Conference on Computational Geometry and Graphs (JCCGG), 2009"
+    relationship: independently-proves
+    note: >-
+      Read in full. A two-page conference abstract, not indexed by the
+      bibliographic databases, with the same title as the authors' 2011
+      journal paper (next entry). It poses the problem of a non-collinear
+      n-point set with at most floor(n/2) connecting lines through every
+      point for every n >= 8, and reports constructions for even n >= 8,
+      n = 4k + 9 and n = 12k + 15 (k >= 0) and for n = 11, with Felsner's
+      arrangement for n = 12k + 19; n = 12k + 23 is left open.
+      dirac_counterexample_all_ge_8 proves these cases again, self-contained.
   - title: "Arrangements of n Points whose Incident-Line-Numbers are at most n/2"
     authors:
       - "Jin Akiyama"
@@ -53,20 +72,13 @@ sources:
     location: "Graphs and Combinatorics 27(3) (2011), 321-326"
     relationship: background
     note: >-
-      Poses the problem of a non-collinear n-point set with at most floor(n/2)
-      connecting lines through every point for every n >= 8. The authors'
-      two-page conference version (Proc. JCCGG 2009,
-      https://www.jaist.ac.jp/~uehara/JCCGG09/submissions/jccgg2009_submission_56.pdf),
-      read in full, reports constructions for even n >= 8, n = 4k + 9,
-      n = 12k + 15 and n = 11, with Felsner's arrangement for n = 12k + 19,
-      and leaves n = 12k + 23 open. This journal version, per its abstract and
-      the secondary surveys (Lund-Purdy-Smith 2014, Trok 2020, Dumitrescu
-      2024, Florek 2025), covers 11 of 12 residue classes modulo 12 (plus
-      n = 35 and n = 47), leaving n = 12k + 11 (k >= 4) open; its Springer
-      abstract and pp. 321-322 preview were read, and pp. 323-326 are
-      paywalled and unread [to check]. dirac_counterexample_all_ge_8 proves
-      every n >= 8 again, self-contained, including these cases; the entry is
-      background because the journal proofs were not read in full.
+      The journal version. Per its abstract and the secondary surveys
+      (Lund-Purdy-Smith 2014, Trok 2020, Dumitrescu 2024, Florek 2025), it
+      settles every n >= 8 except the progression n = 12k + 11 (k >= 4),
+      including n = 23, 35 and 47. The Springer abstract and the pp. 321-322
+      preview were read; pp. 323-326 are paywalled and unread [to check], so
+      the entry stays background until they are read, although
+      dirac_counterexample_all_ge_8 proves these sizes again, self-contained.
   - title: "Research Problems in Discrete Geometry"
     authors:
       - "Peter Brass"
