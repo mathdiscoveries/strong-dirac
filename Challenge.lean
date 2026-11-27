@@ -1,3 +1,7 @@
+/-
+Copyright (c) 2026 Tyler B. Hughes. All rights reserved.
+Released under Apache 2.0 license as described in the file LICENSE.
+-/
 module
 
 public import Mathlib.Data.Finset.Card
@@ -5,7 +9,7 @@ public import Mathlib.Data.Finset.Image
 public import Mathlib.Basic.Real.Basic
 
 /-!
-# Palomar Challenge: Strong Dirac Counterexamples (`n ≥ 8`) and Infinite Refutation of Grünbaum (2010)
+# Palomar Challenge: At Most `⌊n/2⌋` Lines Through Every Point (`n ≥ 8`) and an Infinite Refutation of Grünbaum (2010)
 
 For a finite set `P ⊂ ℝ²` of non-collinear points, let `lineCountR2 P a` be
 the number of distinct Euclidean lines through `a` determined by `P`.

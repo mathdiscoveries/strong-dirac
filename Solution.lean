@@ -1,3 +1,7 @@
+/-
+Copyright (c) 2026 Tyler B. Hughes. All rights reserved.
+Released under Apache 2.0 license as described in the file LICENSE.
+-/
 module
 
 public import Mathlib.Data.Finset.Card
@@ -6,7 +10,7 @@ public import Mathlib.Basic.Real.Basic
 public import StrongDirac
 
 /-!
-# Palomar Solution: Strong Dirac Counterexamples (`n ≥ 8`) and Infinite Refutation of Grünbaum (2010)
+# Palomar Solution: At Most `⌊n/2⌋` Lines Through Every Point (`n ≥ 8`) and an Infinite Refutation of Grünbaum (2010)
 -/
 
 @[expose] public section
