@@ -26,9 +26,11 @@ project:
     S_K); Theorem 2 (5 of its 12 classes modulo 60: the odd classes 53, 9 and
     1 with exact maximum (n - 5)/2, and the even classes 52 and 8 with an
     upper bound only); Proposition 3 (family A, without its rationality
-    claim). Lemmas 4, 5 and 6 are proved in this package's Lean library but
-    not compared (Lemmas 4 and 5 over the reals only); Lemma 7 is not in this
-    package; Conjecture 8 is open and not counted.
+    claim). This package's Lean library proves Theorems 1 and 2 and
+    Proposition 3 as stated, with their rational configurations and
+    exact maxima (StrongDirac.ExactEqualities: thm_half, thm_knights,
+    familyA_odd_rational_exact), and Lemmas 4, 5, 6 and 7, but compares
+    only the parts above; Conjecture 8 is open and not counted.
   authors:
     - "Tyler B. Hughes"
   license: "Apache-2.0"
@@ -88,7 +90,7 @@ sources:
       even-parameter family (n = 12k + 7, t <= 6k + 2, deficit 3/2), which
       StrongDirac/TightnessAndMod12.lean formalizes as felsnerSet (n = 12k + 7
       and its 1-deletion 12k + 6) and adapts via a 4-deletion (felsnerDel4,
-      n = 12k + 3 and 12k + 2), while StrongDirac/Class12kPlus11.lean adapts
+      n = 12k + 3 and 12k + 2), while StrongDirac/R15_2_1.lean adapts
       the same underlying grid via an 8-deletion for n = 12k + 11 (k >= 2).
       Poses the conjectured bound G(n) = 2 * floor(n/4) for all sufficiently
       large n (refuted here by at least 2 across four infinite congruence
