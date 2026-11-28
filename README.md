@@ -8,7 +8,7 @@ $\mathbb{R}^2$ proving:
 1. Every $n \ge 8$ admits a non-collinear $n$-point set with every point on at
    most $\lfloor n/2 \rfloor$ connecting lines (self-contained across all 12
    residue classes modulo 12, proving again the bound of Stefan Felsner's
-   infinite $6K + 7$ family (Felsner, *Geometric Graphs and Arrangements*,
+   infinite $n = 12k + 7$ family (Felsner, *Geometric Graphs and Arrangements*,
    Vieweg 2004, p. 86) with coordinates reconstructed from the accounts of
    Grünbaum 2010, pp. 4–5, and Lund–Purdy–Smith 2014, §2, and adding an
    explicit 8-deletion
@@ -27,10 +27,22 @@ $\mathbb{R}^2$ proving:
   27(3) (2011), 321–326 (`doi:10.1007/s00373-011-1023-4`), read in full:
   Theorem 1.2 (p. 323) gives the $\lfloor n/2 \rfloor$ bound for every $n \ge 8$
   except possibly $n = 12k + 11$, $k \ge 4$, which they leave open (p. 325).
-  This formalization proves all 12 classes self-contained, independently of the
-  cases they cover.
+  This formalization proves all 12 classes self-contained in Lean, and reuses
+  their configuration at $n = 11$: `x11Pts` is projectively equivalent to their
+  Fig. 4 (p. 325; a regular pentagon, the inner pentagon of its pentagram and
+  the centre), which Grünbaum (2010) draws in dual form (Fig. 2(b)) and lists
+  as $X(11)$ (p. 8). For
+  $n = 4k + 9$, `sqGrid` has the same incidence structure as their
+  construction (ii) (projectively equivalent at $n = 9$ and $13$ only); at
+  $n = 12k + 19$ both use Felsner's family. Its other witnesses on their range
+  differ from theirs (checked for $n \le 51$), and it adds $n = 12k + 11$,
+  $k \ge 4$.
 - **Felsner (2004)**, *Geometric Graphs and Arrangements*, p. 86: published the
-  infinite $6K + 7$ family (read in the author-hosted copy); `felsner_mod12_euclidean`
+  infinite $n = 12k + 7$ family (Chapter 5, pp. 69–86, read in full in the
+  author-hosted copy, with a full-text search of the whole book for "Dirac",
+  "$r^*$" and "$12k + 7$": the problem appears only on p. 86 and in a
+  cross-reference on p. 51; p. 86 writes "smallest" where "largest" is
+  meant in defining $r^*(n)$); `felsner_mod12_euclidean`
   independently proves its bound of at most $6k + 2$ lines at $n = 12k + 7$,
   $k \ge 1$. `felsnerSet` was
   reconstructed from Grünbaum (2010, pp. 4–5) and Lund–Purdy–Smith (2014, §2),
@@ -42,11 +54,12 @@ $\mathbb{R}^2$ proving:
   projective plane*, *Ars Math. Contemp.* 2, 1–25: `h3Pts` is the dual of
   $A(15,1)$ (used at $n = 15$, and with one point deleted at $n = 14$) and
   `o23Pts` is $A(25,5)$ with two points deleted ($n = 23$); both match the
-  catalogue's $f$-, $t$- and $r$-vectors.
+  catalogue's $f$-, $t$- and $r$-vectors. `sqGrid 1` ($n = 9$) is the dual of
+  $A(9,1)$, and `felsnerSet 1` ($n = 19$) has the vectors of $A(19,1)$.
 - **Dirac (1951)**, *Collinearity properties of sets of points*, *Quart. J.
   Math.* 2, 221–227, read: pp. 226–227 give, for even $n$, a configuration with
   every point on at most $n/2$ connecting lines, which the all-$n$ theorem meets
-  again for even $n \ge 8$ by its own constructions.
+  again for even $n \ge 8$ by different constructions.
 - **Florek (2011)**, *On some extremal problem in discrete geometry*,
   *Mathematical Economics* 7(14), 65–70, read: Theorem 2.2 (p. 68) gives
   $4k + 1$ points ($k \ge 2$) with every point on at most $2k$ lines, met again
@@ -60,10 +73,17 @@ $\mathbb{R}^2$ proving:
   $r^*(A) \ge [(1 + n(A))/2]$ for small $n$, with $r^*(A) = 4, 6, 8, 10, 12, 16$
   at $n(A) = 9, 15, 19, 25, 31, 37$. Dually (Akiyama et al. 2011, p. 322) these
   are non-collinear $n$-point sets with every point on at most $r^*(A)$
-  connecting lines. His value equals the package's bound $(n - 1)/2$ at $n = 9$
+  connecting lines. His value equals the compared bound $(n - 1)/2$ at $n = 9$
   and is smaller (stronger) at the other five sizes, so his configurations
-  already give the package's bound at all six sizes; the odd-$n$ theorem proves
-  that bound again by its own constructions, not his smaller values.
+  already give the compared bound at all six sizes. Internally the library
+  uses at $n = 9, 15, 19$ the duals of $A(9,1)$ and $A(15,1)$ of the 2009
+  catalogue and a set with the vectors of $A(19,1)$ (`sqGrid 1`, `h3Pts`,
+  `felsnerSet 1`; $A(15,1)$ and $A(19,1)$ are his $A_1(15)$ and $A_1(19)$,
+  and he names $A_1(9)$) and proves his values 4, 6 and 8 for them as upper
+  bounds (`sqGrid_mod4_euclidean`, `cert_h3`,
+  `felsner_mod12_euclidean`), which the compared theorems weaken to
+  $(n - 1)/2$; at $n = 25, 31, 37$ it uses other configurations (at most 12,
+  14, 18 lines) and does not prove his values 10, 12, 16.
 - **Companion paper & search logs** (the paper states and proves every
   compared statement; this package formalizes them):
   - https://mathdiscoveries.org/results/few-lines-through-every-point

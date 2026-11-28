@@ -18,7 +18,7 @@ project:
     neither the
     n = 12k + 11 construction nor infinite straight-line families with deficit > 3/2
     were found in those logged searches; most of the print monographs
-    remain unread [to check].
+    remain unread.
     Coverage by this package's Palomar comparison: none of the companion
     paper's 7 main results is compared in Lean in full, and 3 are compared in
     part, all over the reals: Theorem 1 (the bound floor(n/2) for every
@@ -60,7 +60,9 @@ sources:
       point for every n >= 8, and reports constructions for even n >= 8,
       n = 4k + 9 and n = 12k + 15 (k >= 0) and for n = 11, with Felsner's
       arrangement for n = 12k + 19; n = 12k + 23 is left open.
-      dirac_counterexample_all_ge_8 proves these cases again, self-contained.
+      dirac_counterexample_all_ge_8 proves these cases again, self-contained;
+      the configurations it shares with these authors are credited on the
+      2011 entry (next).
   - title: "Arrangements of n Points whose Incident-Line-Numbers are at most n/2"
     authors:
       - "Jin Akiyama"
@@ -69,38 +71,74 @@ sources:
       - "Gisaku Nakamura"
     id: "https://doi.org/10.1007/s00373-011-1023-4"
     type: paper
-    location: "Graphs and Combinatorics 27(3) (2011), 321-326, Theorem 1.2 (p. 323) and its proof in Section 2"
-    relationship: independently-proves
+    location: "Graphs and Combinatorics 27(3) (2011), 321-326, Theorem 1.2 (p. 323), its proof in Section 2 and Fig. 4 (p. 325)"
+    relationship: adapts
     note: >-
       Read in full (pp. 321-326, a copy obtained through university
       access). Theorem 1.2, p. 323: "Let n be an integer with n >= 8. Then
       there is a set X of n noncollinear points in the plane satisfying
       t(X) <= floor(n/2) except possibly for n = 12k + 11 (k >= 4)." The
-      proof, pp. 323-325, covers seven classes: even n, n = 4k + 9,
-      12k + 15, 12k + 19 (Felsner's configuration), n = 11, n = 23 and 35
-      (deletions from the 24- and 37-point simplicial examples of Table 2),
-      and n = 47 (the 49-point set of Fig. 5 with two points deleted).
-      dirac_counterexample_all_ge_8 proves the same bound on that range
-      again, by its own constructions, and also at n = 12k + 11, k >= 4,
-      which the paper leaves open (p. 325).
+      proof, pp. 323-325, covers seven classes: (i) even n, (ii)
+      n = 4k + 9, (iii) 12k + 15, (iv) 12k + 19 (Felsner's configuration),
+      (v) n = 11, (vi) n = 23 and 35 (deletions from the 24- and 37-point
+      simplicial examples of Table 2) and (vii) n = 47 (the 49-point set of
+      Fig. 5 with two points deleted). The package reuses their n = 11
+      configuration: x11Pts (StrongDirac/TightnessAndMod12.lean; cert_x11
+      certifies every point on at most 5 connecting lines), the witness of
+      dirac_counterexample_all_ge_8 at n = 11, is projectively equivalent to
+      their (v), "10 points on two regular pentagons and a point at the
+      center" (Fig. 4: a regular pentagon, the inner pentagon of its
+      pentagram and the centre), checked by computing a projective map that
+      carries the one set onto the other. Grunbaum (2010, Fig. 2(b) and
+      p. 8, entry below) draws its dual and lists it as X(11). For
+      n = 4k + 9 the package's sqGrid has the same incidence structure as
+      their (ii) (equally spaced points on the two diagonals of a square and
+      four points at infinity, Fig. 2), by an explicit correspondence checked
+      for every such n <= 53; the two sets are projectively equivalent at
+      n = 9 and 13 but not for n >= 17, where sqGrid's points on its two
+      rich lines are spaced as 1/c rather than equally. Its 12k + 19
+      witness is Felsner's family (Felsner 2004 entry). The other witnesses
+      it uses on their range differ from theirs at the same n: the even and
+      12k + 15 witnesses span a different number of connecting lines than
+      (i) and (iii) at every such n <= 51 checked, the n = 23 witness has a
+      different parent
+      (Grunbaum 2009 entry), and at n = 35 and 47 the package's witnesses
+      have points on 17 and 23 lines, where theirs have at most 16 and 22.
+      dirac_counterexample_all_ge_8 thus proves the bound on their range
+      again, with their configuration at n = 11, and also at n = 12k + 11,
+      k >= 4, which the paper leaves open (p. 325).
   - title: "Geometric Graphs and Arrangements: Some Chapters from Combinatorial Geometry"
     authors:
       - "Stefan Felsner"
     id: "https://doi.org/10.1007/978-3-322-80303-0"
     type: book
-    location: "Advanced Lectures in Mathematics, Vieweg (2004), Section 5 notes, p. 86, Figure 5.14"
+    location: "Advanced Lectures in Mathematics, Vieweg (2004), Chapter 5 (pp. 69-86); its notes, p. 86, Figure 5.14"
     relationship: independently-proves
     note: >-
-      Read p. 86 in the author-hosted copy of the book
-      (page.math.tu-berlin.de/~felsner/Buch/gga-book.pdf). In the notes to
-      Chapter 5, with r*(n) the minimum, over nontrivial arrangements of n
-      lines, of the maximum number of vertices on a line of the arrangement:
-      "There
-      is a family of arrangements showing that r*(n) <= ceil(n/2) - 2 for
-      all n of the form n = 12k + 7, the member of this family with k = 2 is
-      shown in Figure 5.14" ("An arrangement of 31 lines (including the line
-      at infinity) and at most 14 vertices on each line"). The page gives no
-      general construction. felsner_mod12_euclidean (StrongDirac/
+      Read Chapter 5 in full (pp. 69-86, Sections 5.1-5.5 with the notes)
+      in the author-hosted copy of the book
+      (page.math.tu-berlin.de/~felsner/Buch/gga-book.pdf, 178 pages,
+      2026-11-28), and searched the full text of the whole book for
+      "Dirac", "r*" and "12k + 7". Dirac's problem appears only on p. 86
+      and in a cross-reference on p. 51 (notes to Chapter 3: Beck's result
+      improved "several other geometric extremal problems, among them
+      Dirac's problem (cf. the notes section of Chapter 5)"), apart from
+      the bibliography (pp. 152, 155); r*(n) and 12k + 7 appear only on
+      p. 86. Section 5.1, p. 69, calls an arrangement trivial if one point
+      lies on all its lines and calls the intersection points of lines its
+      vertices. P. 86 reads "Let r*(n) be the smallest integer such that in
+      every nontrivial arrangement of n lines there is a line with at least
+      r*(n) vertices"; "smallest" is a slip for "largest" (the smallest
+      such integer is trivial), so r*(n) is the minimum, over nontrivial
+      arrangements of n lines, of the maximum number of vertices on a line.
+      It continues: "Grunbaum [108] (page 25) gives counterexamples for
+      values of n up to 37. There is a family of arrangements showing that
+      r*(n) <= ceil(n/2) - 2 for all n of the form n = 12k + 7, the member
+      of this family with k = 2 is shown in Figure 5.14" ("An arrangement
+      of 31 lines (including the line at infinity) and at most 14 vertices
+      on each line"). Chapter 5 gives no general construction or proof of
+      the bound, and the search found no other page on the problem.
+      felsner_mod12_euclidean (StrongDirac/
       TightnessAndMod12.lean) independently proves the dual bound for
       k >= 1: a non-collinear set of n = 12k + 7 points with every point on
       at most 6k + 2 connecting lines (felsnerSet), which
@@ -156,7 +194,13 @@ sources:
       A(24,2) with one line deleted, whereas this package's n = 23 witness
       is A(25,5) with two lines deleted (o23Pts), a different parent; for
       n = 14 and 15 it lists A(15,1) with one line deleted and A(15,1), the
-      parents of h3Del1Pts and h3Pts here.
+      parents of h3Del1Pts and h3Pts here. His Figure 2 (p. 4) draws
+      A(9,1), whose dual point set is sqGrid 1, the package's n = 9 witness,
+      and "the dual of the example with n = 11 and t = 5 found by Akiyama
+      et al.", listed as X(11) on p. 8; that example is x11Pts here
+      (credited on the Akiyama et al. 2011 entry). His Figure 3(a) (p. 5)
+      draws A(19,1), whose catalogue f-, t- and r-vectors felsnerSet 1, the
+      package's n = 19 witness, has.
   - title: "A catalogue of simplicial arrangements in the real projective plane"
     authors:
       - "Branko Grunbaum"
@@ -181,7 +225,14 @@ sources:
       n = 14. For n = 23 this formalization uses two deletions from A(25,5),
       where his table uses A(24,2) with one line deleted. Lund-Purdy-Smith
       (2014, Section 2) also
-      single out A(25,5) from this catalogue.
+      single out A(25,5) from this catalogue. Two members of the package's
+      families are also catalogue arrangements, checked the same way:
+      sqGrid 1 (used at n = 9) is the dual of A(9,1), the R(2) arrangement
+      of a square (its four side lines and four mirror lines with the line
+      at infinity, pp. 2-3; f0 = 13, t = (6, 4, 3), every line on 4
+      vertices), and felsnerSet 1 (used at n = 19) has the vectors of
+      A(19,1) (f0 = 49, t = (21, 18, 6, 0, 4), r6 = 4, r8 = 15), whose
+      t-vector no other 19-line arrangement listed shares.
   - title: "Arrangements and Spreads"
     authors:
       - "Branko Grunbaum"
@@ -205,17 +256,29 @@ sources:
       (Akiyama et al. 2011, p. 322, Table 1, and Lemmas C and D, read), an
       arrangement of n lines with r*(A) = r is a non-collinear set of n
       points with every point on at most r connecting lines. At these six
-      sizes dirac_counterexample_all_odd_ge_9 (and
-      dirac_counterexample_all_ge_8, the same bound at odd n) gives at most
-      (n - 1)/2 = 4, 7, 9, 12, 15, 18 connecting lines. At n = 9 Grunbaum's
-      value equals the package's bound; at n = 15, 19, 25, 31 and 37 it is
-      smaller (stronger). His configurations therefore already establish
-      the package's bound at all six sizes, and the package proves that
-      bound again by its own constructions; it does not prove his smaller
-      values at the five larger sizes. The credit is limited to those six
-      existence bounds. P. 18 (Conjecture 2.5, citing Dirac [1951])
-      concerns t_2, the number of ordinary vertices, a different quantity,
-      and is not used.
+      sizes the compared statements dirac_counterexample_all_odd_ge_9 (and
+      dirac_counterexample_all_ge_8, the same bound at odd n) state only at
+      most (n - 1)/2 = 4, 7, 9, 12, 15, 18 connecting lines: Grunbaum's
+      value equals this at n = 9 and is smaller (stronger) at n = 15, 19,
+      25, 31 and 37, so his configurations already establish the compared
+      bound at all six sizes. The witnesses the library uses, and what it
+      proves for them, are a separate matter. At n = 9 it uses sqGrid 1,
+      the dual of A(9,1) of the 2009 catalogue (entry above), with at most
+      4 lines through every point; at n = 15, h3Pts, the dual of A(15,1),
+      for which cert_h3 certifies at most 6; at n = 19, felsnerSet 1, with
+      the vectors of A(19,1), for which felsner_mod12_euclidean proves at
+      most 8. The catalogue (p. 4) states that its sporadic A(n,k) is
+      A_k(n) of Grunbaum [1971], so A(15,1) and A(19,1) are the A_1(15)
+      and A_1(19) of the p. 25 table; at n = 9 the table names A_1(9). The
+      library thus proves, as upper bounds, his value 6 for the arrangement
+      he lists at n = 15, his value 8 at n = 19 for a set with the vectors
+      of the A_1(19) he lists, and his value 4 at n = 9 for A(9,1); the
+      compared statements weaken these to (n - 1)/2. At n = 25,
+      31 and 37 it uses other configurations (sqGrid 5, felsnerSet 2,
+      sqGrid 8, with at most 12, 14 and 18 lines) and does not prove his
+      values 10, 12 and 16. The credit is limited to those six existence
+      bounds. P. 18 (Conjecture 2.5, citing Dirac [1951]) concerns t_2, the
+      number of ordinary vertices, a different quantity, and is not used.
   - title: "Collinearity properties of sets of points"
     authors:
       - "G. A. Dirac"
@@ -241,7 +304,9 @@ sources:
       a written verification. For even n this is a non-collinear set of n
       points with every point on at most n/2 connecting lines, the existence
       bound that dirac_counterexample_all_ge_8 proves again for even n >= 8 by
-      its own constructions; the credit is limited to that even bound. The
+      different constructions (none of its even witnesses has n - 1 points
+      on two lines, as these configurations do; checked for n <= 50); the
+      credit is limited to that even bound. The
       odd configurations give (n + 1)/2, weaker than the package's odd bound
       (n - 1)/2, and are not credited. The conjecture itself is a different
       statement and is not proved here.
@@ -300,7 +365,8 @@ sources:
     location: "Electronic Journal of Combinatorics 21(2) (2014), #P2.31, Section 2, p. 2, Figures 1-2"
     relationship: adapts
     note: >-
-      Section 2 read. Its description of Felsner's straight-line family,
+      Read in full (EJC #P2.31 and arXiv:1202.3110v2). Its description in
+      Section 2 of Felsner's straight-line family,
       p. 2 ("This infinite family of counterexamples is due to Felsner and
       contains 6k + 7 points with none incident to more than 3k + 2 spanned
       lines when k is even"), with the dual of the n = 31 member (Figure 1)
@@ -347,16 +413,19 @@ sources:
       Table 1 rows A, B and C), and the Lean work formalizes them; the
       formalization presents no result that the paper does not. The 11
       residue classes of Akiyama, Ito, Kobayashi and Nakamura are printed
-      prior work, listed above; the proof of them here is a second proof.
+      prior work, listed above; the proof of them here is a second proof,
+      which uses their configuration at n = 11 (x11Pts).
       Felsner's bound (Felsner 2004, p. 86, entry above) is proved again
       with coordinates reconstructed from Grunbaum's (2010) and
       Lund-Purdy-Smith's (2014) accounts of his family, and two arrangements of Grunbaum's 2009 catalogue are
-      adapted. Logged prior-work searches (arXiv, CORE on 2026-11-20, Google
+      adapted; the witnesses at n = 9 and 19 are also catalogue arrangements
+      (entry above). Logged prior-work searches (arXiv, CORE on 2026-11-20, Google
       Scholar on 2026-11-22, and the 2014-2025 surveys listed above) found
       neither the punctured grid for n = 12k + 11 nor an infinite
       straight-line family with deficit exceeding 3/2; no exhaustive priority
       claim is made. Akiyama et al. (2011) was read in full; of Felsner
-      (2004) only p. 86, of Brass-Moser-Pach (2005) only p. 313 and of
+      (2004) only Chapter 5 (pp. 69-86, with a full-text search of the
+      whole book), of Brass-Moser-Pach (2005) only p. 313 and of
       Grunbaum (1972) only pp. 16-25 were read, and Dirac (1951)
       was read. AI research agents built
       and directed by Tyler B. Hughes generated and checked this work. No human
