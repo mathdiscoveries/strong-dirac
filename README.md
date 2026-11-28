@@ -52,17 +52,18 @@ $\mathbb{R}^2$ proving:
   $4k + 1$ points ($k \ge 2$) with every point on at most $2k$ lines, met again
   at those sizes.
 - **Grünbaum (1972)**, *Arrangements and Spreads*, CBMS Regional Conference
-  Series in Mathematics 10, pp. 24–25, read (pp. 18–19 and 24–25 only, from page
-  images of the archive.org lending copy): after Theorem 2.19 he tabulates
-  arrangements that refute Dirac's conjecture $r^*(A) \ge [(1 + n(A))/2]$ for
-  small $n$, with $r^*(A) = 4, 6, 8, 10, 12, 16$ at $n(A) = 9, 15, 19, 25, 31, 37$.
-  Dually these are non-collinear $n$-point sets with every point on at most
-  $r^*(A)$ connecting lines (the definition of $r^*(A)$ is on a page not read;
-  the dual reading follows Felsner 2004, p. 86, and Akiyama et al. 2011,
-  p. 322). His value equals the package's bound $(n - 1)/2$ at $n = 9$ and is
-  smaller (stronger) at the other five sizes, so his configurations already
-  give the package's bound at all six sizes; the odd-$n$ theorem proves that
-  bound again by its own constructions, not his smaller values.
+  Series in Mathematics 10, pp. 24–25, read (pp. 16–25 only, from page images of
+  the archive.org lending copy): $r^*(A)$ is "the largest value of $j$ such that
+  $r_j(A) > 0$" (p. 23), with $r_j(A)$ the number of lines incident with
+  precisely $j$ vertices (p. 16), so the largest number of vertices on one line.
+  After Theorem 2.19 he tabulates arrangements that refute Dirac's conjecture
+  $r^*(A) \ge [(1 + n(A))/2]$ for small $n$, with $r^*(A) = 4, 6, 8, 10, 12, 16$
+  at $n(A) = 9, 15, 19, 25, 31, 37$. Dually (Akiyama et al. 2011, p. 322) these
+  are non-collinear $n$-point sets with every point on at most $r^*(A)$
+  connecting lines. His value equals the package's bound $(n - 1)/2$ at $n = 9$
+  and is smaller (stronger) at the other five sizes, so his configurations
+  already give the package's bound at all six sizes; the odd-$n$ theorem proves
+  that bound again by its own constructions, not his smaller values.
 - **Companion paper & search logs** (the paper states and proves every
   compared statement; this package formalizes them):
   - https://mathdiscoveries.org/results/few-lines-through-every-point
