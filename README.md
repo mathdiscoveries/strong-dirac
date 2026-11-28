@@ -51,20 +51,26 @@ $\mathbb{R}^2$ proving:
   *Mathematical Economics* 7(14), 65–70, read: Theorem 2.2 (p. 68) gives
   $4k + 1$ points ($k \ge 2$) with every point on at most $2k$ lines, met again
   at those sizes.
-- **Grünbaum (1972)**, *Arrangements and Spreads*, p. 25: earlier small
-  counterexamples ($n = 9, 15, 19, 25, 31, 37$), which the all-$n$ theorem meets
-  again at those sizes by its own constructions. Not read; credited as
-  `independently-proves` in `formalization.yaml`, marked `[to check]`, on read
-  passages that state its results: Akiyama et al. (2011, p. 322, Table 1),
-  Felsner (2004, p. 86) and Brass–Moser–Pach (2005, p. 313).
+- **Grünbaum (1972)**, *Arrangements and Spreads*, CBMS Regional Conference
+  Series in Mathematics 10, pp. 24–25, read (pp. 18–19 and 24–25 only, from page
+  images of the archive.org lending copy): after Theorem 2.19 he tabulates
+  arrangements that refute Dirac's conjecture $r^*(A) \ge [(1 + n(A))/2]$ for
+  small $n$, with $r^*(A) = 4, 6, 8, 10, 12, 16$ at $n(A) = 9, 15, 19, 25, 31, 37$.
+  Dually these are non-collinear $n$-point sets with every point on at most
+  $r^*(A)$ connecting lines (the definition of $r^*(A)$ is on a page not read;
+  the dual reading follows Felsner 2004, p. 86, and Akiyama et al. 2011,
+  p. 322). His value equals the package's bound $(n - 1)/2$ at $n = 9$ and is
+  smaller (stronger) at the other five sizes, so his configurations already
+  give the package's bound at all six sizes; the odd-$n$ theorem proves that
+  bound again by its own constructions, not his smaller values.
 - **Companion paper & search logs** (the paper states and proves every
   compared statement; this package formalizes them):
   - https://mathdiscoveries.org/results/few-lines-through-every-point
   Logged literature searches (arXiv, CORE 2026-11-20, Google Scholar 2026-11-22,
   and open surveys by Lund–Purdy–Smith 2014, Trok 2020, Dumitrescu 2022, and
   Florek 2025) did not find prior constructions for $n = 12k + 11$ or infinite
-  straight-line families with deficit $> 3/2$; Grünbaum (1972) and most of the
-  print monographs remain unread.
+  straight-line families with deficit $> 3/2$; most of the print monographs
+  remain unread.
 
 Coverage by this package's Palomar comparison: none of the companion paper's 7 main results is compared in Lean in full, and 3 are compared in part, all over the reals: Theorem 1 (the bound $\lfloor n/2 \rfloor$ for every $n \ge 8$ and its odd case, not the exact maximum $6j + 5$ of the rational grid $S_K$); Theorem 2 (5 of its 12 classes modulo 60: the odd classes 53, 9 and 1 with exact maximum $(n - 5)/2$, and the even classes 52 and 8 with an upper bound only); Proposition 3 (family A, without its rationality claim). This package's Lean library proves Theorems 1 and 2 and Proposition 3 as stated, with their rational configurations and exact maxima (StrongDirac.ExactEqualities: thm_half, thm_knights, familyA_odd_rational_exact), and Lemmas 4, 5, 6 and 7, but compares only the parts above; Conjecture 8 is open and not counted.
 

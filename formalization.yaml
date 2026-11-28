@@ -17,8 +17,8 @@ project:
     2025) are published at mathdiscoveries.org/results/few-lines-through-every-point;
     neither the
     n = 12k + 11 construction nor infinite straight-line families with deficit > 3/2
-    were found in those logged searches; Grunbaum (1972) and most of the
-    print monographs remain unread [to check].
+    were found in those logged searches; most of the print monographs
+    remain unread [to check].
     Coverage by this package's Palomar comparison: none of the companion
     paper's 7 main results is compared in Lean in full, and 3 are compared in
     part, all over the reals: Theorem 1 (the bound floor(n/2) for every
@@ -187,24 +187,33 @@ sources:
       - "Branko Grunbaum"
     id: "https://doi.org/10.1090/cbms/010"
     type: book
-    location: "CBMS Regional Conference Series in Mathematics 10, American Mathematical Society (1972), pp. 24-25 [to check]"
+    location: "CBMS Regional Conference Series in Mathematics 10, American Mathematical Society (1972), pp. 24-25, the table after Theorem 2.19"
     relationship: independently-proves
     note: >-
-      The book itself was not read [to check]: it is in print and no copy
-      was available. The credit rests on read passages that state its
-      results. Akiyama et al. (2011, read in full), p. 322: "the conjecture
-      is false as Grunbaum pointed out in [2] (pp. 24-25). He considered a
-      set Y of lines in the projective plane ... He constructed sets of lines
-      with the values in Table 1", Table 1 giving n(Y) = 9, 15, 19, 25, 31,
-      37 with r*(Y) = 4, 6, 8, 10, 12, 16; by duality (their Lemmas C and D)
-      these are non-collinear sets of n points with every point on at most
-      r*(Y) <= (n - 1)/2 connecting lines. Felsner (2004, p. 86, read):
-      "Grunbaum [108] (page 25) gives counterexamples for values of n up to
-      37"; Brass, Moser and Pach (2005, p. 313, read): "Many small examples
-      listed by Grunbaum [Gr72] show that the conjecture is false with
-      c = 0". dirac_counterexample_all_odd_ge_9 proves the bound
-      t <= (n - 1)/2 again at these six sizes, by its own constructions; the
-      credit is limited to those six existence bounds.
+      Read pp. 18-19 and 24-25 only, from page images of the archive.org
+      lending copy (2026-11-28). P. 24, after Theorem 2.19: "Dirac [1951]
+      also conjectured that r*(A) >= [(1 + n(A))/2]. This conjecture is
+      certainly false for small n since there exist arrangements (even
+      simplicial ones) with the following values:". The table on p. 25
+      lists n(A) = 9, 15, 19, 25, 31, 37 with r*(A) = 4, 6, 8, 10, 12, 16,
+      naming each arrangement by its designation in Grunbaum [1971]; the
+      pages read give no verification of the values. The definition of
+      r*(A) is on an earlier page, not read. Its reading as the largest
+      number of vertices on a line of A, and the duality taking such an
+      arrangement of n lines to a non-collinear set of n points with every
+      point on at most r*(A) connecting lines, follow Felsner (2004, p. 86)
+      and Akiyama et al. (2011, p. 322, Table 1, and Lemmas C and D), both
+      read. At these six sizes dirac_counterexample_all_odd_ge_9 (and
+      dirac_counterexample_all_ge_8, the same bound at odd n) gives at most
+      (n - 1)/2 = 4, 7, 9, 12, 15, 18 connecting lines. At n = 9 Grunbaum's
+      value equals the package's bound; at n = 15, 19, 25, 31 and 37 it is
+      smaller (stronger). His configurations therefore already establish
+      the package's bound at all six sizes, and the package proves that
+      bound again by its own constructions; it does not prove his smaller
+      values at the five larger sizes. The credit is limited to those six
+      existence bounds. P. 18 (Conjecture 2.5, citing Dirac [1951])
+      concerns t_2, the number of ordinary vertices, a different quantity,
+      and is not used.
   - title: "Collinearity properties of sets of points"
     authors:
       - "G. A. Dirac"
@@ -345,9 +354,9 @@ sources:
       neither the punctured grid for n = 12k + 11 nor an infinite
       straight-line family with deficit exceeding 3/2; no exhaustive priority
       claim is made. Akiyama et al. (2011) was read in full; of Felsner
-      (2004) only p. 86 and of Brass-Moser-Pach (2005) only p. 313 were
-      read, and Dirac (1951) was read; Grunbaum (1972) remains unread
-      [to check]. AI research agents built
+      (2004) only p. 86, of Brass-Moser-Pach (2005) only p. 313 and of
+      Grunbaum (1972) only pp. 18-19 and 24-25 were read, and Dirac (1951)
+      was read. AI research agents built
       and directed by Tyler B. Hughes generated and checked this work. No human
       mathematician has yet refereed the proof.
 
